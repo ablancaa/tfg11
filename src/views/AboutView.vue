@@ -1,9 +1,6 @@
 <template>
   <div class="container">
     <h1>Bítacora de trabajo</h1>
-
-    
-
   </div>
   <div class="container">
   <div class="row">
@@ -92,23 +89,23 @@
     <button type="button" class="btn btn-link">Link</button> -->
 </template>
 <script setup>
-import CreditCard_1 from '@/components/CreditCard_1';
-import CreditCard_2 from '@/components/CreditCard_2';
-import CreditCard_3 from '@/components/CreditCard_3';
-import CreditCard_4 from '@/components/CreditCard_4';
-import Card_1 from '@/components/Card_1';
-import Card_2 from '@/components/Card_2';
-import Card_4 from '@/components/Card_4';
-import Switch_1 from '@/components/Toggle_switches_1.vue';
-import Switch_2 from '@/components/Toggle_switches_2.vue';
-import Loader_1 from '@/components/Loader_1.vue';
-import Loader_2 from '@/components/Loader_2.vue';
-import Loader_3 from '@/components/Loader_3.vue';
-import Loader_4 from '@/components/Loader_4.vue';
-import Loader_5 from '@/components/Loader_5.vue';
-import Input_1 from '@/components/Input_1.vue';
-import Button_1 from '@/components/Button_1';
-import Button_2 from '@/components/Button_2';
+import CreditCard_1 from '@/components/CreditCards/CreditCard_1';
+import CreditCard_2 from '@/components/CreditCards/CreditCard_2';
+import CreditCard_3 from '@/components/CreditCards/CreditCard_3';
+import CreditCard_4 from '@/components/CreditCards/CreditCard_4';
+import Card_1 from '@/components/Cards/Card_1';
+import Card_2 from '@/components/Cards/Card_2';
+import Card_4 from '@/components/Cards/Card_4';
+import Switch_1 from '@/components/Switches/Toggle_switches_1.vue';
+import Switch_2 from '@/components/Switches/Toggle_switches_2.vue';
+import Loader_1 from '@/components/Loaders/Loader_1.vue';
+import Loader_2 from '@/components/Loaders/Loader_2.vue';
+import Loader_3 from '@/components/Loaders/Loader_3.vue';
+import Loader_4 from '@/components/Loaders/Loader_4.vue';
+import Loader_5 from '@/components/Loaders/Loader_5.vue';
+import Input_1 from '@/components/Inputs/Input_1.vue';
+import Button_1 from '@/components/Buttons/Button_1';
+import Button_2 from '@/components/Buttons/Button_2';
 
 </script>
 <style  scoped>
