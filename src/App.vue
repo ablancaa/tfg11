@@ -1,11 +1,17 @@
 <template>
-  <nav>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <NavBar/>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
+  </nav> -->
   <router-view/>
+  <Footer/>
 </template>
-
+<script setup>
+import NavBar from '@/components/NavBar.vue'
+import Footer from '@/components/Footer.vue'
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -25,6 +31,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #2730de;
 }
 </style>

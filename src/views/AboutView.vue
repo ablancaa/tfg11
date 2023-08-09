@@ -1,20 +1,11 @@
 <template>
+  <BarState :titlePage="titlePage"/>
   <div class="container">
-    <h1>Bítacora de trabajo</h1>
+    
   </div>
   <div class="container">
-  <div class="row">
-    <div class="col-xs col-md"><ul class="list-group">
-      <li class="list-group-item">Instalación de Bootstrap 5</li>
-      <li class="list-group-item">Maquetación de la web/app</li>
-    </ul></div>
-    <div class="col-xs col-md"><ul class="list-group">
-      <li class="list-group-item">Instalación de Bootstrap 5</li>
-    </ul></div>
-    <div class="col-xs col-md"><ul class="list-group">
-      <li class="list-group-item">Instalación de Bootstrap 5</li>
-    </ul></div>
-  </div>
+ 
+
   <hr/>
   <div class="row">
     <div class="col-xs col-md">
@@ -89,6 +80,9 @@
     <button type="button" class="btn btn-link">Link</button> -->
 </template>
 <script setup>
+
+import BarState from '@/components/BarState.vue'
+
 import CreditCard_1 from '@/components/CreditCards/CreditCard_1';
 import CreditCard_2 from '@/components/CreditCards/CreditCard_2';
 import CreditCard_3 from '@/components/CreditCards/CreditCard_3';
@@ -106,6 +100,8 @@ import Loader_5 from '@/components/Loaders/Loader_5.vue';
 import Input_1 from '@/components/Inputs/Input_1.vue';
 import Button_1 from '@/components/Buttons/Button_1';
 import Button_2 from '@/components/Buttons/Button_2';
+
+const titlePage="EJEMPLOS"
 
 </script>
 <style  scoped>

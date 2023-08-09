@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Bitacora from '../views/Bitacora.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/bitacora',
+    name: 'bitacora',
+    component: Bitacora
   },
   {
     path: '/about',
