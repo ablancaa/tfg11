@@ -2,9 +2,11 @@
     <div class="topnav" id="myTopnav">
 
         <router-link to="/" class="active">Home</router-link>
-        <a href="#news">News</a>
+        <router-link to="/ticketsView">Tickets View</router-link>
+        <router-link to="/usersView">Users View</router-link>
         <router-link to="/bitacora">Bitácora</router-link>
-        <router-link to="/about" href="#about">Ejemplos</router-link>
+        <router-link to="/tablerosView">Tableros</router-link>
+        <router-link to="/about">Ejemplos</router-link>
         <a href="javascript:void(0);" class="icon" @click="myFunction">
             <i class="fa fa-bars"></i>
         </a>

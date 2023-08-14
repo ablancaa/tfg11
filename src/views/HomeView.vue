@@ -7,16 +7,16 @@
   <div class="row fondo">
     <div class="col-sm-12 col-md-4 col-lg-4"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Estado de Tickets</h2></div></div>
     <div class="col-sm-12 col-md-4 col-lg-4"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Tickets</h2></div></div>
-    <div class="col-sm-12 col-md-4 col-lg-4"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Usuarios</h2></div></div>
+    <div class="col-sm-12 col-md-4 col-lg-4"><router-link to="/usersView" class=""><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Usuarios</h2></div></router-link></div>
   </div>
   <hr/>
   <div class="row">
-    <div class="col-sm-2 col-md-2 col-lg-2"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-2 col-md-2 col-lg-2"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-2 col-md-2 col-lg-2"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-2 col-md-2 col-lg-2"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-2 col-md-2 col-lg-2"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-2 col-md-2 col-lg-2"><CreditCard_4/><div class="titulo"></div></div>
+    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
+    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
+    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
+    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
+    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
+    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
   </div>
   <hr/>
    <div class="row fondo">

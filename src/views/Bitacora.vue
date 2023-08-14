@@ -7,14 +7,16 @@
                 <ul class="list-group">
                     <li class="list-group-item"><strong>FECHA</strong></li>
                     <li class="list-group-item">09/08/2023</li>
+                    <li class="list-group-item">11/08/2023</li>
                 </ul>
             </div>
             <div class="col-xs col-md">
                 <ul class="list-group">
                     <li class="list-group-item"><strong>ACCION</strong></li>
-                    <li class="list-group-item">Creación de nuevas páginas</li>
-                    <li class="list-group-item">Creación de Barra para estado</li>
-                    <li class="list-group-item">Creación de Barra para estado</li>
+                    <li class="list-group-item">09/08/2023 - Creación de nuevas páginas</li>
+                    <li class="list-group-item">09/08/2023 - Creación de Barra para estado</li>
+                    <li class="list-group-item">09/08/2023 - Creación de Barra para estado</li>
+                    <li class="list-group-item">11/08/2023 - Instalación de firebase</li>
                 </ul>
             </div>
             <div class="col-xs col-md">

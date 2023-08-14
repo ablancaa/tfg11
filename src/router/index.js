@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Bitacora from '../views/Bitacora.vue'
+import UsersView from '../views/UsersView.vue'
+import TicketsView from '../views/TicketsView.vue'
+import TablerosView from '../views/TablerosView.vue'
 
 const routes = [
   {
@@ -12,6 +15,21 @@ const routes = [
     path: '/bitacora',
     name: 'bitacora',
     component: Bitacora
+  },
+  {
+    path: '/ticketsView',
+    name: 'ticketsView',
+    component: TicketsView
+  },
+  {
+    path: '/usersView',
+    name: 'usersView',
+    component: UsersView
+  },
+  {
+    path: '/tablerosView',
+    name: 'tablerosView',
+    component: TablerosView
   },
   {
     path: '/about',
