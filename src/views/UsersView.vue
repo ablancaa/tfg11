@@ -1,52 +1,85 @@
 <template>
         <BarState :titlePage="titlePage"/>
         <div class="container">
+            <div class="flex-container" v-for="user in users" :key="user.idUser">
+    <div class="flex-item">1 {{ user.idUser }}</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+    <div class="flex-item">6</div>
+    <div class="flex-item">7</div>
+    <div class="flex-item">8</div>
+    <div class="flex-item">9</div>
+    <div class="flex-item">10</div>
+</div>
             <div class="row">
-                <div class="col-s-12 col-md-6">
+                <div class="col-s-12 col-md-6 col-lg-12">
                     <table border="1">
                         <tr>
-                            <td><strong>State</strong></td>
                             <td><strong>IdUser</strong></td>
+                            <td><strong>State</strong></td>
+                            <td><strong>Avatar</strong></td>
                             <td><strong>Name</strong></td>
+                            <td><strong>Surname 1</strong></td>
+                            <td><strong>Surname 2</strong></td>
                             <td><strong>Rol</strong></td>
+                            <td><strong>E-mail</strong></td>
+                            <td><strong>Phones</strong></td>
+                            <td><strong>Acciones</strong></td>
                         </tr>
+                        
                         <tr v-for="user in users" :key="user.idUser">
-                            <td v-if="user.state =='active'" class="active">{{ user.state }}</td>
-                            <td v-if="user.state =='disconnect'" class="disconnect">{{ user.state }}</td>
                             <td>{{ user.idUser }}</td>
+                            <td v-if="user.state == true" class="active"><img src="../assets/people.svg"/><br/>Active</td>
+                            <td v-if="user.state == false" class="disconnect">Disconnect</td>
+                            <td><img class="css-shadow" :src="user.imgUser" /></td>
+                            
                             <td>{{ user.name }}</td>
+                            <td>{{ user.surname1 }}</td>
+                            <td>{{ user.surname2 }}</td>
                             <td>{{ user.rol }}</td>
+                            <td>{{ user.email }}</td>
+                            <td><select>
+                                    <option v-for="num in user.phones" :key="num">{{ num }}</option>
+                                </select>
+                            </td>
+                            <td><button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button></td>
                         </tr>
                     </table>
                     <hr/>
                 </div>
-                <div class="col-s-12 col-md-6">
+                <div class="col-s-12 col-md-6 col-lg-12">
                     <table border="1">
                         <tr>
                             <td>IdTicket</td>
+                            <td><strong>Acciones</strong></td>
                             <td>Date</td>
-                            <td>technical</td>
+                            <td colspan="3">technical</td>
                         </tr>
                         <tr v-for="ticket in tickets" :key="ticket.idTicket">
                             <td>{{ ticket.idTicket }}</td>
+                            <td><button><img src="../assets/eliminar.png" width="20" /></button> <button>Añadir</button> <button>Desactivar</button></td>
                             <td>{{ ticket.date }}</td>
-                            <td>{{ ticket.technical[0] }}</td>
+                            <td v-for="tecni in ticket.technical" :key="tecni">{{ tecni }}</td>   
                         </tr>
                     </table>
                     <br/>
                 </div>
                 
                 <hr/>
-                <div class="col-s-12 col-md-6">
-                    <table border="1">
+                <div class="col-s-12 col-md-6 col-lg-12">
+                    <table border="0">
                         <tr>
                             <td>IdClient</td>
+                            <td>Avatar</td>
                             <td>Name</td>
                             <td>Surname 1</td>
                             <td>Surname 2</td>
                         </tr>
                         <tr v-for="client in clients" :key="client.idClient">
                             <td>{{ client.idClient }}</td>
+                            <td><img class="css-shadow" :src="client.imgClient" /></td>
                             <td>{{ client.name }}</td>
                             <td>{{ client.surname1 }}</td>
                             <td>{{ client.surname2 }}</td>
@@ -96,10 +129,10 @@ async function getListado() {
 table {
 	width:100%;
 	border-spacing: 10px 25px;
-	border:2px solid black;
+	border:0px solid black;
 }
 td {
-	border:2px solid black;
+	border:0.5px solid black;
 }
 
 .active {
@@ -109,5 +142,24 @@ td {
 .disconnect{
     background-color: rgb(255, 183, 163);
 }
+.css-shadow {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 2px solid #cddc39;
+  filter: drop-shadow(0 0 10px #ff5722);
+}
+.flex-container {
+    display: flex;
+    width: 100%;
+    background-color: #DDF58C;
+}
 
+.flex-item {
+    background-color: #67C3E6;
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+}
 </style>

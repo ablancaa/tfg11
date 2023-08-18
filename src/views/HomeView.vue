@@ -7,7 +7,13 @@
   <div class="row fondo">
     <div class="col-sm-12 col-md-4 col-lg-4"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Estado de Tickets</h2></div></div>
     <div class="col-sm-12 col-md-4 col-lg-4"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Tickets</h2></div></div>
-    <div class="col-sm-12 col-md-4 col-lg-4"><router-link to="/usersView" class=""><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/><div class="titulo"><h2>Usuarios</h2></div></router-link></div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+  <div class="">
+      <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">Nº Usuarios: </router-link>{{ users.length }}</p>
+      <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">On Line:</router-link> {{ users.state }}</p>
+      <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
+      <router-link to="/usersView"><div class="titulo"><h2>Usuarios</h2></div></router-link></div>
+    </div>
   </div>
   <hr/>
   <div class="row">
@@ -30,6 +36,26 @@
 // @ is an alias to /src
 import BarState from '@/components/BarState.vue'
 import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
+import { reactive, onMounted } from "vue";
+import { db } from "../utils/FirebaseConfig.js"
+import { collection, getDocs } from "firebase/firestore";
+
+let users = reactive([]);
+onMounted(() => {
+  getListado();
+});
+
+async function getListado() {
+  const querySnapshotUsers = await getDocs(collection(db, "users"));
+  
+  querySnapshotUsers.forEach((doc) => {
+    users.push(doc.data());
+  });
+  
+  //console.log(users)
+  //console.log(tickets)
+  //console.log(clients)
+}
 const titlePage = "HOME";
 </script>
 <style scoped>
@@ -56,5 +82,26 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   border-radius: 10px;
   margin-top: 15px;
   width: 100%;
+  
 }
+
+.usuario{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: beige;
+  border-radius: 10px;
+  width: 100%;
+
+}
+
+.itemUsuario {
+display: flex;
+align-items: center;
+margin-left: 10px;
+}
+
+
+
 </style>
