@@ -4,6 +4,7 @@ import Bitacora from '../views/Bitacora.vue'
 import UsersView from '../views/UsersView.vue'
 import TicketsView from '../views/TicketsView.vue'
 import TablerosView from '../views/TablerosView.vue'
+import ClientsView from '../views/ClientsView.vue'
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/usersView',
     name: 'usersView',
     component: UsersView
+  },
+  {
+    path: '/clientsView',
+    name: 'clientsView',
+    component: ClientsView
   },
   {
     path: '/tablerosView',

@@ -4,6 +4,7 @@
         <router-link to="/" class="active">Home</router-link>
         <router-link to="/ticketsView">Tickets View</router-link>
         <router-link to="/usersView">Users View</router-link>
+        <router-link to="/clientsView">Clients View</router-link>
         <router-link to="/bitacora">Bitácora</router-link>
         <router-link to="/tablerosView">Tableros</router-link>
         <router-link to="/about">Ejemplos</router-link>
