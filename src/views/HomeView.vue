@@ -6,44 +6,68 @@
 <div class="container">
   <div class="row fondo">
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/clientsView"><div class="titulo "><h2>Clientes</h2></div></router-link>
-      <div>
+      <router-link to="/clientsView">
+        <div class="titulo ">
+          <img class="borderRadius" src="../assets/Client.svg" width="80"/>
+          <h2>Clientes</h2>
+          <p>Nº Clientes: {{ clients.length }}</p>
+          <p>On Line: {{ numActiveClients }}</p>
+          <p>Disconnect: {{ numDisconnectClients }}</p>
+        </div>
+      </router-link>
+      <!-- <div>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Nº Clients </router-link>{{ clients.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">On Line:</router-link> {{ users.state }}</span>
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">On Line:</router-link> {{ numActive }}</span>
         <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Disconnect</router-link></p> 
-      </div>
+      </div> -->
      
       
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/ticketsView"><div class="titulo"><h2>Tickets</h2></div></router-link>
-      <div>
+      <router-link to="/ticketsView">
+        <div class="titulo">
+          <img class="borderRadius" src="../assets/Ticket.svg" width="80"/>
+          <h2>Tickets</h2>
+          <p>Nº Tickets: {{ tickets.length }}</p>
+          <p>En proceso: {{ numActiveClients }}</p>
+          <p>Resueltos: {{ numDisconnectClients }}</p>
+
+        </div>
+      </router-link>
+      <!-- <div>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/ticketsView">Nº Tickets: </router-link>{{ tickets.length }}</span>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Estado:</router-link> {{ users.state }}</span>
         <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
-      </div>
+      </div> -->
       
     </div>
     
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/usersView"><div class="titulo"><h2>Usuarios</h2></div></router-link>
-      <div>
+      <router-link to="/usersView">
+        <div class="titulo">
+          <img class="borderRadius" src="../assets/Users.svg" width="80"/>
+          <h2>Usuarios</h2>
+          <p>Nº Usuarios: {{ users.length }}</p>
+          <p>On Line: {{ numActiveUsers }}</p>
+          <p>Disconnect: {{ numDisconnectUsers }}</p>
+        </div>
+      </router-link>
+      <!-- <div>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Nº Usuarios: </router-link>{{ users.length }}</span>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">On Line:</router-link> {{ users.state }}</span>
         <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
-      </div>
+      </div> -->
       
     </div>
   </div>
-  <hr/>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-  </div>
+  </div> -->
   <hr/>
    <div class="row fondo">
     <div class="col-sm-12 col-md-6 col-lg-6"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/></div>
@@ -55,18 +79,24 @@
 <script setup>
 // @ is an alias to /src
 import BarState from '@/components/BarState.vue'
-import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
-import { reactive, onMounted } from "vue";
+//import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
+import { reactive, onMounted, ref } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
 import { collection, getDocs } from "firebase/firestore";
+
+const titlePage = "HOME";
 
 let users = reactive([]);
 let tickets = reactive([]);
 let clients = reactive([]);
+let numActiveClients = ref(0);
+let numDisconnectClients=ref(0);
+let numActiveUsers = ref(0);
+let numDisconnectUsers=ref(0);
 
-onMounted(() => {
-  getListado();
-});
+  onMounted(() => {
+    getListado();
+  });
 
 async function getListado() {
   const querySnapshotUsers = await getDocs(collection(db, "users"));
@@ -74,19 +104,28 @@ async function getListado() {
   const querySnapshotClients = await getDocs(collection(db, "clients"));
   querySnapshotUsers.forEach((doc) => {
     users.push(doc.data());
+    let activesUsers = users.filter(user => user.state == true)
+    numActiveUsers = activesUsers.length;
+    
+    let disconnectUsers = users.filter(user => user.state == false)
+    numDisconnectUsers = disconnectUsers.length;
   });
   querySnapshotTickets.forEach((doc) => {
     tickets.push(doc.data());
   });
   querySnapshotClients.forEach((doc) => {
     clients.push(doc.data());
+    let activesClients = clients.filter(client => client.state == true)
+    numActiveClients = activesClients.length;
+    
+    let disconnectClients = clients.filter(client => client.state == false)
+    numDisconnectClients = disconnectClients.length;
   });
   
   //console.log(users)
   //console.log(tickets)
   //console.log(clients)
 }
-const titlePage = "HOME";
 </script>
 <style scoped>
 .borderRadius{
@@ -112,13 +151,12 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
 .fondoOpcion{
   background-color: rgb(96, 111, 245);
   border-radius: 10px;
-  border: solid 1px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .titulo{
   background-color: aliceblue;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
   width: 100%; 
 }
 

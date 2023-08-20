@@ -18,8 +18,8 @@
         </div> 
         <div class="estado">
             <div class="items-estado">
-                <p>Estado</p>
-                <p>Progreso</p>
+                <p>Estado:<br/> {{ props.ticket.state }}</p>
+               
                 <p>fecha: {{ props.ticket.date }}</p>
             </div>
         </div>

@@ -1,6 +1,26 @@
 <template>
     <BarState :titlePage="titlePage"/>
     <div class="container">
+        <div class="col-s-12 col-md-6 col-lg-12">
+                    <table border="1">
+                        <tr>
+                            <td>IdTicket</td>
+                            <td><strong>Acciones</strong></td>
+                            <td>Date</td>
+                            <td colspan="3">technical</td>
+                        </tr>
+                        <tr v-for="ticket in tickets" :key="ticket.idTicket">
+                            <td>{{ ticket.idTicket }}</td>
+                            <td><button><img src="../assets/eliminar.png" width="20" /></button> <button>Añadir</button> <button>Desactivar</button></td>
+                            <td>{{ ticket.date }}</td>
+                            <td v-for="tecni in ticket.technical" :key="tecni.idTicket">{{ tecni }}
+                           </td>   
+                            
+                        </tr>
+                    </table>
+                    <br/>
+                </div>
+                
         <div class="row">
             <div class="col-s-12 col-md-12">  
                 <TicketList :ticketsList="tickets" :users="users"/> 
@@ -8,7 +28,8 @@
             <div class="col-s-12 col-md-6">    
             </div>
         </div>
-        
+ 
+       
     </div>
 </template>
 
@@ -23,9 +44,10 @@ const titlePage = "TICKETS VIEW"
 
 let tickets = reactive([]);
 let users = reactive([]);
-onMounted(() => {
-getListado();
-});
+
+    onMounted(() => {
+        getListado();
+    });
 
 async function getListado() {
 

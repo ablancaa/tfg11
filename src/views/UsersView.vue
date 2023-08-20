@@ -2,16 +2,22 @@
         <BarState :titlePage="titlePage"/>
         <div class="container">
             <div class="flex-container" v-for="user in users" :key="user.idUser">
-    <div class="flex-item">1 {{ user.idUser }}</div>
-    <div class="flex-item">2</div>
-    <div class="flex-item">3</div>
-    <div class="flex-item">4</div>
-    <div class="flex-item">5</div>
-    <div class="flex-item">6</div>
-    <div class="flex-item">7</div>
-    <div class="flex-item">8</div>
-    <div class="flex-item">9</div>
-    <div class="flex-item">10</div>
+                <div class="flex-item"><p>{{ user.idUser }}</p></div>
+                <div class="flex-item active" v-if="user.state == true"><img src="../assets/people.svg"/><br/>Active</div>
+                <div class="flex-item disconnect" v-if="user.state == false" >Disconnect</div>          
+                <div class="flex-item"><img class="css-shadow" :src="user.imgUser" /></div>
+                <div class="flex-item"><p>{{ user.name }}</p></div>
+                <div class="flex-item"><p>{{ user.surname1 }}</p></div>
+                <div class="flex-item"><p>{{ user.surname2 }}</p></div>
+                <div class="flex-item"><p>{{ user.rol }}</p></div>
+                <div class="flex-item"><p>{{ user.email }}</p></div>
+                <div class="flex-item">
+                    <select>
+                        <option v-for="num in user.phones" :key="num">{{ num }}</option>
+                    </select>
+                </div>
+                <div class="flex-item"><button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button>
+            </div>
 </div>
             <div class="row">
                 <div class="col-s-12 col-md-6 col-lg-12">
@@ -48,23 +54,6 @@
                         </tr>
                     </table>
                     <hr/>
-                </div>
-                <div class="col-s-12 col-md-6 col-lg-12">
-                    <table border="1">
-                        <tr>
-                            <td>IdTicket</td>
-                            <td><strong>Acciones</strong></td>
-                            <td>Date</td>
-                            <td colspan="3">technical</td>
-                        </tr>
-                        <tr v-for="ticket in tickets" :key="ticket.idTicket">
-                            <td>{{ ticket.idTicket }}</td>
-                            <td><button><img src="../assets/eliminar.png" width="20" /></button> <button>Añadir</button> <button>Desactivar</button></td>
-                            <td>{{ ticket.date }}</td>
-                            <td v-for="tecni in ticket.technical" :key="tecni">{{ tecni }}</td>   
-                        </tr>
-                    </table>
-                    <br/>
                 </div>
                 
                 <hr/>
@@ -153,13 +142,18 @@ td {
 .flex-container {
     display: flex;
     width: 100%;
+    height: auto;
     background-color: #DDF58C;
+   
+    
 }
 
 .flex-item {
     background-color: #67C3E6;
-    width: 100px;
-    height: 50px;
-    margin: 5px;
+    width: 100%;
+    height: auto;
+    margin: 3px;
+    align-items: center;
+    align-content: center;
 }
 </style>

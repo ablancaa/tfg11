@@ -3,8 +3,10 @@
     <div class="container">
         <hr/>
         <div class="flex-container">
+            <div class="flex-item-1"> imgClient </div>
             <div class="flex-item"> idClient </div>
-            <div class="flex-item"> imgClient </div>
+            <div class="flex-item"> State </div>
+            
             <div class="flex-item">name</div>
             <div class="flex-item">surname1 </div>
             <div class="flex-item">surname2 </div>
@@ -12,9 +14,10 @@
         </div>
         
         <div class="flex-container" v-for="client in clients" :key="client.idClient">
-           
+            <div class="flex-item-1"><img class="css-shadow" :src="client.imgClient" /></div>
             <div class="flex-item">{{ client.idClient }}</div>
-            <div class="flex-item"><img class="css-shadow" :src="client.imgClient" /></div>
+            <div class="flex-item">{{ client.state }}</div>
+            
             <div class="flex-item">{{ client.name }}</div>
             <div class="flex-item">{{ client.surname1 }}</div>
             <div class="flex-item">{{ client.surname2 }}</div>
@@ -114,6 +117,13 @@ align-items: center;
 
 background-color: #ddf1f8;
 width: 100%;
+height: 100%;
+margin: 5px;
+}
+.flex-item-1 {
+
+background-color: #ddf1f8;
+width: 50%;
 height: 100%;
 margin: 5px;
 }
