@@ -6,11 +6,11 @@
 <div class="container">
   <div class="row fondo">
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/ticketsView"><div class="titulo "><h2>Clientes</h2></div></router-link>
+      <router-link to="/clientsView"><div class="titulo "><h2>Clientes</h2></div></router-link>
       <div>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/clientsView">Nº Clients </router-link>{{ clients.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/clientsView">On Line:</router-link> {{ users.state }}</span>
-        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/clientsView">Disconnect</router-link></p> 
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Nº Clients </router-link>{{ clients.length }}</span>
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">On Line:</router-link> {{ users.state }}</span>
+        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Disconnect</router-link></p> 
       </div>
      
       
@@ -18,9 +18,9 @@
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
       <router-link to="/ticketsView"><div class="titulo"><h2>Tickets</h2></div></router-link>
       <div>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/menu.png" width="50"/><router-link to="/ticketsView">Nº Tickets: </router-link>{{ tickets.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">Estado:</router-link> {{ users.state }}</span>
-        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/ticketsView">Nº Tickets: </router-link>{{ tickets.length }}</span>
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Estado:</router-link> {{ users.state }}</span>
+        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
       </div>
       
     </div>
@@ -28,9 +28,9 @@
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
       <router-link to="/usersView"><div class="titulo"><h2>Usuarios</h2></div></router-link>
       <div>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">Nº Usuarios: </router-link>{{ users.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">On Line:</router-link> {{ users.state }}</span>
-        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/people.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Nº Usuarios: </router-link>{{ users.length }}</span>
+        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">On Line:</router-link> {{ users.state }}</span>
+        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
       </div>
       
     </div>
