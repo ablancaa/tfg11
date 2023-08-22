@@ -1,13 +1,13 @@
 <template>
     <p>Estados de Clientes</p>
-        <Carousel :autoplay="2000" :wrap-around="true">
+        <Carousel :autoplay="3000" :wrap-around="true">
             <Slide v-for="slide in props.clients" :key="slide">
                 <div class="carousel__item">
                     <span>
                     <img class="borderRadiusImgSlide" :src="slide.imgClient"/>
                         <br/>
-                            <span v-if="slide.state == true">On line</span>
-                            <span v-else>Disconnect</span>
+                            <span v-if="slide.state == true"><span class="green">On Line</span></span>
+                            <span v-else class="red">Disconnect</span>
                     </span>
                     <br/> {{ slide.name }}
                 </div>
@@ -43,6 +43,32 @@ onMounted(() => {
 <style scoped>
 .borderRadiusImgSlide {
     border-radius: 50%;
+}
+span.green {
+  background: #5EA226;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  width: 6.1em;
+  margin-top: 5px;
+}
+span.red {
+  background: #a22c26;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  width: 6.1em;
+  margin-top: 5px; 
 }
 
 </style>

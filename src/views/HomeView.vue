@@ -1,7 +1,6 @@
 <template>
   <BarState :titlePage="titlePage"/>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
   </div>
 <div class="container">
   <div class="row fondo">

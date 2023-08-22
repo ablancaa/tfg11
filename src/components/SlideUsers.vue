@@ -6,8 +6,8 @@
                     <span>
                     <img class="borderRadiusImgSlide" :src="slide.imgUser"/>
                         <br/>
-                            <span v-if="slide.state == true">On line</span>
-                            <span v-else>Disconnect</span>
+                            <span v-if="slide.state == true" class="green">On line</span>
+                            <span v-else class="red">Disconnect</span>
                     </span>
                     <br/> {{ slide.name }}
                 </div>
@@ -43,5 +43,30 @@ onMounted(() => {
 .borderRadiusImgSlide {
     border-radius: 50%;
 }
-
+span.green {
+  background: #5EA226;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  width: 6.1em;
+  margin-top: 5px;
+}
+span.red {
+  background: #a22c26;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  width: 6.1em;
+  margin-top: 5px; 
+}
 </style>
