@@ -33,6 +33,7 @@
             <div class="item">Nº Tickets:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsNum }}</p></div>
             <div class="item">En proceso:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsProgress }}</p></div>
             <div class="item">Resueltos:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsEnd }}</p></div>
+            <div class="item"><SlideTickets :tickets="tickets"/></div>
           </div>
         </div>
       </router-link>
@@ -86,7 +87,7 @@
       <div class="row">
       <div class="col-4"><SlideClients :clients="clients"/></div>
       <div class="col-4"><SlideUsers :users="users"/></div>
-      <div class="col-4"><SlideUsers :users="users"/></div>
+      <div class="col-4"><SlideTickets :tickets="tickets"/></div>
       </div>
         <p></p>
         
@@ -155,6 +156,7 @@
 import BarState from '@/components/BarState.vue'
 import SlideClients from '@/components/SlideClients.vue'
 import SlideUsers from '@/components/SlideUsers.vue'
+import SlideTickets from '@/components/SlideTickets.vue'
 //import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
 import { reactive, onMounted } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
@@ -252,6 +254,7 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
 }
 .fondoOpcion{
   border-radius: 10px;
+  margin-top: 10px;
   
 }
 .titulo{
