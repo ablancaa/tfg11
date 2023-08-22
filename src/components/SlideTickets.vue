@@ -3,14 +3,12 @@
         <Carousel :autoplay="3000" :wrap-around="true">
             <Slide v-for="slide in props.tickets" :key="slide">
                 <div class="carousel__item">
-                    <span>
-                    <!-- <img class="borderRadiusImgSlide" :src="slide.imgClient"/> -->
-                    {{ slide.idTicket }}
-                        <br/>
+                  {{ slide.idTicket }}
+                  <br/>
                       
-                            <span v-if="slide.state == 'process'"><span class="green">Process</span></span>
+                  <span v-if="slide.state == 'procces'"><span class="yellow">Procces</span></span>
                             <span v-else class="red">End</span>
-                    </span>
+                
                     <br/><br/>{{ slide.description }}
                 </div>
                 <br/>
@@ -46,8 +44,8 @@ onMounted(() => {
 .borderRadiusImgSlide {
     border-radius: 50%;
 }
-span.green {
-  background: #5EA226;
+span.yellow {
+  background: #a09a00c2;
   border-radius: 0.8em;
   -moz-border-radius: 0.8em;
   -webkit-border-radius: 0.8em;
