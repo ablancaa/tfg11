@@ -1,54 +1,8 @@
 <template>
     <BarState :titlePage="titlePage"/>
-    <div class="container">
-        <hr/>
-        <div class="flex-container">
-            <div class="flex-item-1"> imgClient </div>
-            <div class="flex-item"> idClient </div>
-            <div class="flex-item"> State </div>
-            
-            <div class="flex-item">name</div>
-            <div class="flex-item">surname1 </div>
-            <div class="flex-item">surname2 </div>
-           
+        <div class="container">
+            <ClientList :clientsList="clients"/> 
         </div>
-        
-        <div class="flex-container" v-for="client in clients" :key="client.idClient">
-            <div class="flex-item-1"><img class="css-shadow" :src="client.imgClient" /></div>
-            <div class="flex-item">{{ client.idClient }}</div>
-            <div class="flex-item">{{ client.state }}</div>
-            
-            <div class="flex-item">{{ client.name }}</div>
-            <div class="flex-item">{{ client.surname1 }}</div>
-            <div class="flex-item">{{ client.surname2 }}</div>
-
-            <!-- <div class="flex-item">6</div>
-            <div class="flex-item">7</div>
-            <div class="flex-item">8</div>
-            <div class="flex-item">9</div>
-            <div class="flex-item">10</div> -->
-        </div>
-        <hr/>
-            <!-- <div class="col-s-12 col-md-6 col-lg-12">
-                <table border="0">
-                    <tr>
-                        <td>IdClient</td>
-                        <td>Avatar</td>
-                        <td>Name</td>
-                        <td>Surname 1</td>
-                        <td>Surname 2</td>
-                    </tr>
-                    <tr v-for="client in clients" :key="client.idClient">
-                        <td>{{ client.idClient }}</td>
-                        <td><img class="css-shadow" :src="client.imgClient" /></td>
-                        <td>{{ client.name }}</td>
-                        <td>{{ client.surname1 }}</td>
-                        <td>{{ client.surname2 }}</td>
-                    </tr>
-                </table>
-            </div> -->
-        </div>
-
 </template>
 
 <script setup>
@@ -56,7 +10,7 @@ import { reactive, onMounted } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
 import { collection, getDocs } from "firebase/firestore";
 import BarState from '@/components/BarState.vue'
-
+import ClientList from '@/components/ClientList.vue'
 const titlePage = "CLIENTS VIEW"
 
 
