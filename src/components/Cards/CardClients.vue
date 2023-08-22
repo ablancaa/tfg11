@@ -174,7 +174,7 @@ span.green {
   display: inline-block;
   font-weight: bold;
   line-height: 1.6em;
-  margin-right: 15px;
+  margin-right: 0px;
   text-align: center;
   width: 6.1em; 
 }
@@ -187,7 +187,7 @@ span.red {
   display: inline-block;
   font-weight: bold;
   line-height: 1.6em;
-  margin-right: 15px;
+  margin-right: 0px;
   text-align: center;
   width: 6.1em; 
 }
