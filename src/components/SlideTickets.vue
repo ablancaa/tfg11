@@ -1,21 +1,25 @@
 <template>
     <p>Estados de Tickets</p>
+    
         <Carousel :autoplay="3000" :wrap-around="true">
+          
             <Slide v-for="slide in props.tickets" :key="slide">
-                <div class="carousel__item">
-                  {{ slide.idTicket }}
-                  <br/>
-                      
-                  <span v-if="slide.state == 'procces'"><span class="yellow">Procces</span></span>
-                            <span v-else class="red">End</span>
+              
+                <div class="carousel__item item">
                 
-                    <br/><br/>{{ slide.description }}
+                  <h6><strong>{{ slide.idTicket }}</strong></h6>
+                
+                      
+                  <span v-if="slide.state == 'procces'"><img src="../assets/proceso.png" width="50"/><br/><span class="yellow">Procces</span></span>
+                            <span v-else><span class="red">End</span></span>
                 </div>
                 <br/>
-               <div>              
+     
+               <div> 
+                       
                </div>
             </Slide>
-            
+          
     <template #addons>
     </template>
   </Carousel>
@@ -43,6 +47,14 @@ onMounted(() => {
 <style scoped>
 .borderRadiusImgSlide {
     border-radius: 50%;
+}
+.item{
+  border: 1px solid;
+  padding: 5px;
+  margin-left: -10px;
+  margin-right: -10px;
+  border-radius: 0.8em;
+  background-color: #ffffff;
 }
 span.yellow {
   background: #a09a00c2;

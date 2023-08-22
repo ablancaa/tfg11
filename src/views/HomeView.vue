@@ -7,7 +7,7 @@
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
       <router-link to="/clientsView">
         <div class="titulo ">
-          <h2><img class="borderRadius" src="../assets/Client.svg" width="80"/> Clientes</h2>
+          <h1><img class="borderRadius" src="../assets/Client.svg" width="80"/> Clientes</h1>
           <div class="contenedorFlex">
             <div class="item">Nº Clientes:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsNum }}</p></div>
             <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsActive}}</p></div>
@@ -28,7 +28,7 @@
       <router-link to="/ticketsView">
         <div class="titulo">
           
-          <h2><img class="borderRadius" src="../assets/Ticket.svg" width="80"/>Tickets</h2>
+          <h1><img class="borderRadius" src="../assets/Ticket.svg" width="80"/>Tickets</h1>
           <div class="contenedorFlex">
             <div class="item">Nº Tickets:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsNum }}</p></div>
             <div class="item">En proceso:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsProgress }}</p></div>
@@ -49,7 +49,7 @@
       <router-link to="/usersView">
         <div class="titulo">
           
-          <h2><img class="borderRadius" src="../assets/Users.svg" width="80"/> Usuarios</h2>
+          <h1><img class="borderRadius" src="../assets/Users.svg" width="80"/> Usuarios</h1>
           <div class="contenedorFlex">
             <div class="item">Nº Usuarios:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersNum }}</p></div>
             <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersActive }}</p></div>
@@ -283,7 +283,7 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   flex-basis: auto;
   align-self: auto;
   order: 0;
-  padding: 6px;
+  padding: 5px;
 }
 .item-slide{
   align-items: center;
