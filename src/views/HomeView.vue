@@ -172,20 +172,17 @@ async function getListados() {
 box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
 } */
 .img {
-  width: 80%;
-  height: 80%;
+  width: 50%;
+  height: 50%;
 }
 .fondo {
   background-color:rgb(207, 223, 252);
-  padding: 10px;
-  border-radius: 2%;
-  width: auto;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .fondoOpcion{
-  /* background-color: rgb(96, 111, 245); */
   border-radius: 10px;
-  margin-top: 20px;
 }
 .titulo{
   background-color: aliceblue;
@@ -221,7 +218,7 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
 .sizeFontFlexBox {
   font-size: 2rem;
   background-color: rgb(149, 189, 248);
-  width: 100px;
+  width: 80px;
   border-radius: 70px;
   color: azure;
   

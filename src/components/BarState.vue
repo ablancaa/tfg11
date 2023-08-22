@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-        <h1>{{ props.titlePage }}</h1>
+       <div class="item"><h1>{{ props.titlePage }}</h1></div> 
     </div>
 </template>
 
@@ -15,8 +15,17 @@ const props = defineProps({
 
 <style scoped>
 .body {
-    margin: 5px;
-    background-color: rgb(233, 212, 252);
-    height: 58px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: normal;
+    align-content: space-around;
+    margin: 2px;
+    background-color: rgb(174, 185, 250);
+    height: 50px;
+}
+.item{
+    
 }
 </style>

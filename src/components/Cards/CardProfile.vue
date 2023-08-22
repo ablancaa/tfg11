@@ -14,8 +14,10 @@
                                 <a title="Google-plus" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
                                 <a title="Behance" href="javascript:void(0);"><i class="fa fa-behance"></i></a>
                                 <a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram "></i></a>
+                                
                             </p>
-                        
+                            <div class="state" v-if="props.client.state==true"><span class="green">On Line</span></div>
+                            <div class="state" v-if="props.client.state==false"><span class="red">Disconnect</span></div>
                             </div>
                  
                         </div>
@@ -147,4 +149,34 @@ a {
     color: #424242
 }
 
+.state{
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+span.green {
+  background: #5EA226;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 15px;
+  text-align: center;
+  width: 6em; 
+}
+span.red {
+  background: #a22c26;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 15px;
+  text-align: center;
+  width: 6em; 
+}
 </style>
