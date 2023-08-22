@@ -164,7 +164,7 @@ span.green {
   line-height: 1.6em;
   margin-right: 15px;
   text-align: center;
-  width: 6em; 
+  width: 6.1em; 
 }
 span.red {
   background: #a22c26;
@@ -177,6 +177,6 @@ span.red {
   line-height: 1.6em;
   margin-right: 15px;
   text-align: center;
-  width: 6em; 
+  width: 6.1em; 
 }
 </style>
