@@ -75,6 +75,7 @@ a {
     margin: 5px
 }
 .card {
+    margin-top: 10px;
     background: #fff;
     margin-bottom: 30px;
     transition: .5s;

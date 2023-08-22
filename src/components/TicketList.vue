@@ -1,5 +1,5 @@
 <template>
-   <div class="lista-material">
+   <div class="col-xs-12 col-md-12 col-lg-12">
       <div v-for="ticket in props.ticketsList" :key="ticket.id">
           <Ticket :ticket="ticket" :users="props.users" />
       </div>

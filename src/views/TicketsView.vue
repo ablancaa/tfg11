@@ -1,7 +1,7 @@
 <template>
     <BarState :titlePage="titlePage"/>
     <div class="container">
-        <div class="col-s-12 col-md-6 col-lg-12">
+        <!-- <div class="col-s-12 col-md-6 col-lg-12">
                     <table border="1">
                         <tr>
                             <td>IdTicket</td>
@@ -19,15 +19,8 @@
                         </tr>
                     </table>
                     <br/>
-                </div>
-                
-        <div class="row">
-            <div class="col-s-12 col-md-12">  
+                </div> -->
                 <TicketList :ticketsList="tickets" :users="users"/> 
-            </div>
-            <div class="col-s-12 col-md-6">    
-            </div>
-        </div>
  
        
     </div>
