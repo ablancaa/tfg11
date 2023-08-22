@@ -1,5 +1,5 @@
 <template>
-    <p>Lista de Usuarios</p>
+    <p>Estado de Usuarios</p>
         <Carousel :autoplay="3000" :wrap-around="true">
             <Slide v-for="slide in props.users" :key="slide">
                 <div class="carousel__item">
@@ -15,9 +15,8 @@
                <div>              
                </div>
             </Slide>
-            
-    <template #addons>
-    </template>
+            <template #addons>
+        </template>
   </Carousel>
 
 </template>

@@ -1,106 +1,52 @@
 <template>
         <BarState :titlePage="titlePage"/>
-        <!-- <div class="container">
-            <div class="flex-container" v-for="user in users" :key="user.idUser">
-                <div class="flex-item"><p>{{ user.idUser }}</p></div>
-                <div class="flex-item active" v-if="user.state == true"><img src="../assets/people.svg"/><br/>Active</div>
-                <div class="flex-item disconnect" v-if="user.state == false" >Disconnect</div>          
-                <div class="flex-item"><img class="css-shadow" :src="user.imgUser" /></div>
-                <div class="flex-item"><p>{{ user.name }}</p></div>
-                <div class="flex-item"><p>{{ user.surname1 }}</p></div>
-                <div class="flex-item"><p>{{ user.surname2 }}</p></div>
-                <div class="flex-item"><p>{{ user.rol }}</p></div>
-                <div class="flex-item"><p>{{ user.email }}</p></div>
-                <div class="flex-item">
-                    <select>
-                        <option v-for="num in user.phones" :key="num">{{ num }}</option>
-                    </select>
-                </div>
-                <div class="flex-item"><button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button>
-            </div>
-</div>
-            <div class="row">
-                <div class="col-s-12 col-md-6 col-lg-12">
-                    <table border="1">
-                        <tr>
-                            <td><strong>IdUser</strong></td>
-                            <td><strong>State</strong></td>
-                            <td><strong>Avatar</strong></td>
-                            <td><strong>Name</strong></td>
-                            <td><strong>Surname 1</strong></td>
-                            <td><strong>Surname 2</strong></td>
-                            <td><strong>Rol</strong></td>
-                            <td><strong>E-mail</strong></td>
-                            <td><strong>Phones</strong></td>
-                            <td><strong>Acciones</strong></td>
-                        </tr>
-                        
-                        <tr v-for="user in users" :key="user.idUser">
-                            <td>{{ user.idUser }}</td>
-                            <td v-if="user.state == true" class="active"><img src="../assets/people.svg"/><br/>Active</td>
-                            <td v-if="user.state == false" class="disconnect">Disconnect</td>
-                            <td><img class="css-shadow" :src="user.imgUser" /></td>
-                            
-                            <td>{{ user.name }}</td>
-                            <td>{{ user.surname1 }}</td>
-                            <td>{{ user.surname2 }}</td>
-                            <td>{{ user.rol }}</td>
-                            <td>{{ user.email }}</td>
-                            <td><select>
-                                    <option v-for="num in user.phones" :key="num">{{ num }}</option>
-                                </select>
-                            </td>
-                            <td><button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button> <button><img src="../assets/eliminar.png" width="20" /></button></td>
-                        </tr>
-                    </table>
-                    <hr/>
-                </div>
-                
-                <hr/>
-                <div class="col-s-12 col-md-6 col-lg-12">
-                    <table border="0">
-                        <tr>
-                            <td>IdClient</td>
-                            <td>Avatar</td>
-                            <td>Name</td>
-                            <td>Surname 1</td>
-                            <td>Surname 2</td>
-                        </tr>
-                        <tr v-for="client in clients" :key="client.idClient">
-                            <td>{{ client.idClient }}</td>
-                            <td><img class="css-shadow" :src="client.imgClient" /></td>
-                            <td>{{ client.name }}</td>
-                            <td>{{ client.surname1 }}</td>
-                            <td>{{ client.surname2 }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div> -->
+        
         <div class="container">
-   
-                
-                <UsersList :usersList="users"/> </div>   
+            <SearchBar v-on:search="setSearchTerm" class=""/>
+            <UsersList :usersList="itemListFiltered"/> 
+        </div>   
             
             
      
 </template>
 
 <script setup>
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted, ref, computed } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
 import { collection, getDocs } from "firebase/firestore";
 import BarState from '@/components/BarState.vue'
 import UsersList from "@/components/UsersList.vue";
+import SearchBar from "@/components/SearchBar.vue";
 
 const titlePage = "USERS VIEW"
 let users = reactive([]);
 let tickets = reactive([]);
 let clients = reactive([]);
+let searchTerm = ref("");
 
 onMounted(() => {
   getListado();
 });
+const itemListFiltered = computed(() => {
+  if (!searchTerm.value) {
+    return users;
+  } else if (searchTerm.value) {
+    return users.filter((item) => {
+      return (
+        item.idUser.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+        item.name.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+        item.surname1.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+        item.surname2.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+        item.email.includes(searchTerm.value) 
+      );
+    });
+  }
+  return users;
+});
+function setSearchTerm(search) {
+  //console.log(search);
+  searchTerm.value = search;
+}
 
 async function getListado() {
   const querySnapshotUsers = await getDocs(collection(db, "users"));

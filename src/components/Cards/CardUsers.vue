@@ -54,7 +54,7 @@ import { defineProps } from 'vue';
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
 }
 .flip-card {
-background-color: transparent;
+
   width: 150px;
   height: 250px;
   perspective: 1000px;
@@ -66,8 +66,7 @@ background-color: transparent;
   height: 250px;
   perspective: 1000px;
   border-radius: 10%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  
+  box-shadow: 0 15px 8px 0 rgba(77, 102, 245, 0.2);  
 }
 
 .flip-card-inner {
@@ -79,10 +78,12 @@ background-color: transparent;
   transform-style: preserve-3d;
   border-radius: 10%;
   box-shadow: 0 4px 8px 0 rgba(36, 12, 173, 0.2);
+  
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+  background: #8ba3fb;
 }
 .email{
     font-size: 0.8rem;
@@ -99,12 +100,14 @@ background-color: transparent;
 .flip-card-front {
   background-color: #1400c500;
   color: black;
+  
 }
 
 .flip-card-back {
   background-color: #ecefff;
   color: black;
   transform: rotateY(180deg);
+
 }
 span.green {
   background: #5EA226;

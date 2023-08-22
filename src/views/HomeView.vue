@@ -79,7 +79,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-       <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Usuarios</h1></span>
+       <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Estado de Usuarios</h1></span>
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -307,7 +307,7 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   height: 50%;
 }
 .fondo {
-  background-color:rgb(207, 223, 252);
+  background-color:rgba(254, 254, 254, 0.633);
   padding: 5px;
   margin-bottom: 10px;
 }
@@ -316,12 +316,14 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
 }
 .fondoOpcion{
   border-radius: 10px;
+  
 }
 .titulo{
-  background-color: aliceblue;
+  background-color: rgba(241, 247, 252, 0.736);
   border-radius: 10px;
   margin-top: 10px;
   width: 100%; 
+  border: 1px solid;
 }
 
 .contenedorFlex{
@@ -351,7 +353,7 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   background-color: rgb(149, 189, 248);
   width: 80px;
   border-radius: 70px;
-  color: azure;
+  color: rgb(255, 255, 255);
 }
 
 /* carrusel */
