@@ -6,8 +6,8 @@
             
               <span v-for="technical in props.ticket.technical" :key="technical.idTicket">
                     <div v-for="user in users" :key="user.idUser"> 
-                      <div v-if="user.idUser == technical"><img class="css-shadow" :src="user.imgUser"/> <!--{{ user.name }}--></div>
-                      <div v-if="user.idUser == technical"> {{ user.name }}</div>
+                      <div class="item" v-if="user.idUser == technical"><img class="css-shadow" :src="user.imgUser"/><span v-if="user.idUser == technical"> {{ user.name }}</span> <!--{{ user.name }}--></div>
+                      
                     </div>  
               </span>
             </div>
@@ -90,9 +90,15 @@ async function getListadoUsers() {
     width: 100%;
     margin-top: 10px;
 }
+ 
 .technical{
+  display: flex;
   margin-top: 10px;
-    align-items: center;
+  align-items: center;
+}
+
+.item{
+  flex-direction: column;
 }
 .description{
     text-align: left;

@@ -25,7 +25,7 @@
                             <h4 class="m-t-0 m-b-0"><strong>{{props.client.name}}</strong> {{props.client.surname1}} {{props.client.surname2}}</h4>
                             
                             <span class="job_post">Ui UX Designer</span>
-                            <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
+                            <p>{{props.client.adress}}</p>
                             
                             
                             <div>
@@ -66,7 +66,7 @@ body{
     background:#eee;    
 }
 a {
-    color: #f96332;
+    color: #000000;
 }
 .m-t-5{
     margin-top: 15px;   

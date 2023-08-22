@@ -13,6 +13,7 @@
             <div class="item">Nº Clientes:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsNum }}</p></div>
             <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsActive}}</p></div>
             <div class="item">Disconnect:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsDisconnect }}</p></div>
+            <div class="item"><SlideClients :clients="clients"/></div>
           </div>
         </div>
       </router-link>
@@ -74,8 +75,23 @@
   </div> -->
   <hr/>
    <div class="row fondo">
-    <div class="col-sm-12 col-md-6 col-lg-6"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/></div>
-    <div class="col-sm-12 col-md-6 col-lg-6"><img class="borderRadius img" src="https://static.vecteezy.com/system/resources/previews/005/211/228/original/man-working-on-laptop-illustration-work-from-home-cartoon-character-free-vector.jpg"/></div>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="slider-container">  
+        <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1580501170961-bb0dbf63a6df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
+        />
+        <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        />
+        <img
+          class="slider-item"
+          src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        />
+      </div>  
+    </div>
+    
   </div>
   <div class="row fondo">
     <div class="col-sm-12 col-md-6 col-lg-6"><h2>Array contadores</h2>{{contadores}}</div>
@@ -88,6 +104,7 @@
 <script setup>
 // @ is an alias to /src
 import BarState from '@/components/BarState.vue'
+import SlideClients from '@/components/SlideClients.vue'
 //import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
 import { reactive, onMounted } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
@@ -191,9 +208,6 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   width: 100%; 
 }
 
-
-
-
 .contenedorFlex{
   display: flex;
   flex-direction: row;
@@ -212,8 +226,9 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   align-self: auto;
   order: 0;
   padding: 6px;
- 
-  
+}
+.item-slide{
+  align-items: center;
 }
 .sizeFontFlexBox {
   font-size: 2rem;
@@ -221,6 +236,23 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   width: 80px;
   border-radius: 70px;
   color: azure;
-  
+}
+
+/* carrusel */
+
+
+.slider-container {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-container img {
+  flex: 0 0 100%;
+  width: 50%;
+  object-fit: cover;
+  scroll-snap-align: center;
 }
 </style>
