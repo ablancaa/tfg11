@@ -75,8 +75,99 @@
     <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
   </div> -->
   <hr/>
-   <div class="row fondo">
-    <div class="col-sm-12 col-md-12 col-lg-12">
+  <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+       <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Usuarios</h1></span>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <div class="row">
+      <div class="col-4"><SlideClients :clients="clients"/></div>
+      <div class="col-4"><SlideUsers :users="users"/></div>
+      <div class="col-4"><SlideUsers :users="users"/></div>
+      </div>
+        <p></p>
+        
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <img src="../assets/proceso.png" width="50"/> <span class="tituloBotonDesplegable"><h1>Resumen de items</h1></span>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="home">
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+  </div>
+<div class="container">
+  <div class="row fondo">
+    <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
+      <router-link to="/clientsView">
+        <div class="titulo ">
+          <h2><img class="borderRadius" src="../assets/Client.svg" width="80"/> Clientes</h2>
+          <div class="contenedorFlex">
+            <div class="item">Nº Clientes:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsNum }}</p></div>
+            <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsActive}}</p></div>
+            <div class="item">Disconnect:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsDisconnect }}</p></div>
+            <div class="item"><SlideClients :clients="clients"/></div>
+          </div>
+        </div>
+      </router-link>
+      
+      
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
+      <router-link to="/ticketsView">
+        <div class="titulo">
+          
+          <h2><img class="borderRadius" src="../assets/Ticket.svg" width="80"/>Tickets</h2>
+          <div class="contenedorFlex">
+            <div class="item">Nº Tickets:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsNum }}</p></div>
+            <div class="item">En proceso:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsProgress }}</p></div>
+            <div class="item">Resueltos:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsEnd }}</p></div>
+          </div>
+        </div>
+      </router-link>
+     
+      
+    </div>
+    
+    <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
+      <router-link to="/usersView">
+        <div class="titulo">
+          
+          <h2><img class="borderRadius" src="../assets/Users.svg" width="80"/> Usuarios</h2>
+          <div class="contenedorFlex">
+            <div class="item">Nº Usuarios:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersNum }}</p></div>
+            <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersActive }}</p></div>
+            <div class="item">Disconnect:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersDisconnect }}</p></div>
+            <div class="item"><SlideUsers :users="users"/></div>
+          </div>
+        </div>
+      </router-link>
+      
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Slides Css</h1></span>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row fondo">
+    <div class="col-sm-12 col-md-12 col-lg-6">
       <div class="slider-container">  
         <img
         class="slider-item"
@@ -92,8 +183,29 @@
         />
       </div>  
     </div>
-    
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <div class="slider-container">  
+        <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1580501170961-bb0dbf63a6df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
+        />
+        <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        />
+        <img
+          class="slider-item"
+          src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        />
+      </div>  
+    </div>
   </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <hr/>
+  
   <div class="row fondo">
     <div class="col-sm-12 col-md-6 col-lg-6"><h2>Array contadores</h2>{{contadores}}</div>
     <div class="col-sm-12 col-md-6 col-lg-6"></div>
@@ -199,7 +311,9 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   padding: 5px;
   margin-bottom: 10px;
 }
-
+.tituloBotonDesplegable{
+  margin-left: 6%;
+}
 .fondoOpcion{
   border-radius: 10px;
 }

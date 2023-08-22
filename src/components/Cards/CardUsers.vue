@@ -29,7 +29,7 @@
             <div class="flip-card-back">
                 
                 <p>{{ props.user.idUser }}</p> 
-                <h6>Tcikets asociados</h6> 
+                <h6>Tickets asociados</h6> 
                 <p>Tickets</p>
             </div>
         </div>

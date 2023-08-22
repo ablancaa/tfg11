@@ -1,5 +1,5 @@
 <template>
-    <p>Usuarios On line</p>
+    <p>State Clients</p>
         <Carousel :autoplay="2000" :wrap-around="true">
             <Slide v-for="slide in props.clients" :key="slide">
                 <div class="carousel__item">

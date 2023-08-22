@@ -1,7 +1,7 @@
 <template>
   <div class="container">
    <div class="row">
-      <div class="col-xs-12 col-md-4 col-lg-2 marginTop" v-for="user in props.usersList" :key="user.idUser">
+      <div class="col-6 col-md-4 col-lg-2 marginTop" v-for="user in props.usersList" :key="user.idUser">
           <CardUsers :user="user"/>
       </div>
   </div>
