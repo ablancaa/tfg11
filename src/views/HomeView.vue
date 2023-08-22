@@ -54,6 +54,7 @@
             <div class="item">Nº Usuarios:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersNum }}</p></div>
             <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersActive }}</p></div>
             <div class="item">Disconnect:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersDisconnect }}</p></div>
+            <div class="item"><SlideUsers :users="users"/></div>
           </div>
         </div>
       </router-link>
@@ -105,6 +106,7 @@
 // @ is an alias to /src
 import BarState from '@/components/BarState.vue'
 import SlideClients from '@/components/SlideClients.vue'
+import SlideUsers from '@/components/SlideUsers.vue'
 //import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
 import { reactive, onMounted } from "vue";
 import { db } from "../utils/FirebaseConfig.js"

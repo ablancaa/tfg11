@@ -1,6 +1,6 @@
 <template>
         <BarState :titlePage="titlePage"/>
-        <div class="container">
+        <!-- <div class="container">
             <div class="flex-container" v-for="user in users" :key="user.idUser">
                 <div class="flex-item"><p>{{ user.idUser }}</p></div>
                 <div class="flex-item active" v-if="user.state == true"><img src="../assets/people.svg"/><br/>Active</div>
@@ -76,7 +76,14 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <div class="container">
+   
+                
+                <UsersList :usersList="users"/> </div>   
+            
+            
+     
 </template>
 
 <script setup>
@@ -84,6 +91,7 @@ import { reactive, onMounted } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
 import { collection, getDocs } from "firebase/firestore";
 import BarState from '@/components/BarState.vue'
+import UsersList from "@/components/UsersList.vue";
 
 const titlePage = "USERS VIEW"
 let users = reactive([]);

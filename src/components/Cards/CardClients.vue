@@ -9,6 +9,7 @@
                         <div class="col-xs-12 col-md-6 col-lg">
                             <div class="profile-image float-md-right"> <img :src="props.client.imgClient" alt=""> 
                                 <p class="social-icon m-t-5 m-b-0">
+                                
                                 <a title="Twitter" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
                                 <a title="Facebook" href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
                                 <a title="Google-plus" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
@@ -16,10 +17,12 @@
                                 <a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram "></i></a>
                                 
                             </p>
+                            
                             <div class="state" v-if="props.client.state==true"><span class="green">On Line</span></div>
                             <div class="state" v-if="props.client.state==false"><span class="red">Disconnect</span></div>
                             </div>
-                 
+                           
+                       
                         </div>
                         <div class=" col-xs-12 col-md-6 col-lg">
                             <h4 class="m-t-0 m-b-0"><strong>{{props.client.name}}</strong> {{props.client.surname1}} {{props.client.surname2}}</h4>
@@ -42,6 +45,14 @@
                             </p>
                         </div>                
                     </div>
+                    <span class="fa fa-phone">
+                    <span class="email"> 
+                                <select>
+                                
+                                <option v-for="phone in client.phones" :key="phone">{{ phone }}</option>
+                                </select>
+                            </span>
+                            </span><br/>
                     <span class="fa fa-envelope-open"></span>
                     <span class="email"><span>{{ props.client.email }}</span></span>
                 </div>                    
@@ -96,7 +107,7 @@ a {
     box-shadow: 0 3px 6px rgba(0, 21, 255, 0.345), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .email{
-    font-size: 14px;
+    font-size: 16px;
     color: #424242;
     padding: 4px;
     font-weight: 400;
