@@ -16,38 +16,61 @@
 </template>
 
 <script setup>
-import { reactive, onMounted } from "vue";
-    let newTask = "";
-    let tasks = reactive [{}];
+import { reactive, onMounted, ref } from "vue";
+    let newTask = ref("");
+    let tasks = reactive ([
+      {text: 'Una prueba 1', completed: false},
+      {text: 'Una prueba 2', completed: false},
+      {text: 'Una prueba 3', completed: false},
+    ]);
+ 
+    let task = {
+        text: newTask.value,
+        completed: false,
+        };
+        
+    onMounted(() => {           
     
-            onMounted(() => {
-                 tasks = reactive [
-            {text: 'Una prueba 1', completed: false},
-            {text: 'Una prueba 2', completed: false},
-            {text: 'Una prueba 3', completed: false},
-            {text: 'Una prueba 4', completed: false},
-            {text: 'Una prueba 5', completed: false},
-            {text: 'Una prueba 6', completed: false},
-            {text: 'Una prueba 7', completed: false},
-            {text: 'Una prueba 8', completed: false},
-            {text: 'Una prueba 9', completed: false},
-            {text: 'Una prueba 10', completed: false},
-            {text: 'Una prueba 11', completed: false},
-            {text: 'Una prueba 12', completed: false}
-            ];
-    
-  });
+    });
+
     function createTask() {
-        let task = [{
-         text: newTask,
+        task = {
+         text: newTask.value,
          completed: false,
-        },];
-       //tasks.push(task);
-       
-        task.push(task);
-        newTask = "";
+        };
+        tasks.push(task);
+        newTask.value = "";
         console.log(task);
+        console.log(tasks);
      }
+
+     function completeTask(taskText) {
+      for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        if (taskText === task.text) {
+          task.completed = !task.completed;
+        }
+      }
+    }
+    function deleteTask (taskText, completed){
+      for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        if (taskText === task.text) {
+         
+          tasks.splice(i,1); 
+          
+          let nuevoArray = tasks[i];
+          
+           // nuevoArray.completed = true;
+          
+          
+          console.log(nuevoArray);
+        }
+   
+      }
+      console.log(completed);
+      
+    }
      
 </script>
 
@@ -79,14 +102,18 @@ import { reactive, onMounted } from "vue";
   border: none;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
-  background-color: #2ecc71;
+  background-color: #1882bb;
   color: #ecf0f1;
   cursor: pointer
 }
 .list {
-  margin-top: 40px;
+  margin-top: 10px;
   margin-right: 200px;
   text-align: left;
+  background-color: #d6dcfdd9;
+  border-radius: 15px;
+  width: 100%;
+  
 }
 
 .task {
