@@ -4,8 +4,9 @@
         <div class="container">
             <SearchBar v-on:search="setSearchTerm" class=""/>
             <div class="row botonera">
-              <div class="col-xs-12 col-md-2 col-lg-2">
-                <button class="btn btn-outline-primary" @click="addUser">Add User</button>
+              <div class="col-xs-12 col-md-4 col-lg-4">
+                <span><button class="btn btn-outline-primary" @click="addUser">Add User</button>
+                <button class="btn btn-outline-primary" @click="deleteUser">Delete User</button></span>
               </div>
             </div>
             <PopUpFormUsers v-if="showModal" @close="showModal = false"/>
