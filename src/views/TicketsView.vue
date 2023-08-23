@@ -1,46 +1,43 @@
 <template>
     <BarState :titlePage="titlePage"/>
+    
     <div class="container">
-        <!-- <div class="col-s-12 col-md-6 col-lg-12">
-                    <table border="1">
-                        <tr>
-                            <td>IdTicket</td>
-                            <td><strong>Acciones</strong></td>
-                            <td>Date</td>
-                            <td colspan="3">technical</td>
-                        </tr>
-                        <tr v-for="ticket in tickets" :key="ticket.idTicket">
-                            <td>{{ ticket.idTicket }}</td>
-                            <td><button><img src="../assets/eliminar.png" width="20" /></button> <button>Añadir</button> <button>Desactivar</button></td>
-                            <td>{{ ticket.date }}</td>
-                            <td v-for="tecni in ticket.technical" :key="tecni.idTicket">{{ tecni }}
-                           </td>   
-                            
-                        </tr>
-                    </table>
-                    <br/>
-                </div> -->
-                <TicketList :ticketsList="tickets" :users="users"/> 
- 
-       
+        <SearchBar v-on:search="setSearchTerm" class="" />
+        <TicketList :ticketsList="itemListFiltered" :users="users"/> 
     </div>
 </template>
 
 <script setup>
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted , ref, computed  } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
 import { collection, getDocs } from "firebase/firestore";
 import BarState from '@/components/BarState.vue'
 import TicketList from '@/components/TicketList.vue'
-
+import SearchBar from "@/components/SearchBar.vue";
 const titlePage = "TICKETS VIEW"
 
 let tickets = reactive([]);
 let users = reactive([]);
-
+let searchTerm = ref("");
     onMounted(() => {
         getListado();
     });
+    const itemListFiltered = computed(() => {
+  if (!searchTerm.value) {
+    return tickets;
+  } else if (searchTerm.value) {
+    return tickets.filter((item) => {
+      return (
+        item.idTicket.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+        item.state.toLowerCase().includes(searchTerm.value.toLowerCase()) 
+      );
+    });
+  }
+  return tickets;
+});
+function setSearchTerm(search) {
+  searchTerm.value = search;
+}
 
 async function getListado() {
 
