@@ -3,6 +3,12 @@
         
         <div class="container">
             <SearchBar v-on:search="setSearchTerm" class=""/>
+            <div class="row botonera">
+              <div class="col-xs-12 col-md-2 col-lg-2">
+                <button class="btn btn-outline-primary" @click="addUser">Add User</button>
+              </div>
+            </div>
+            <PopUpFormUsers v-if="showModal" @close="showModal = false"/>
             <UsersList :usersList="itemListFiltered" :ticketList="tickets"/> 
         </div>   
             
@@ -18,12 +24,13 @@ import { collection, getDocs } from "firebase/firestore";
 import BarState from '@/components/BarState.vue'
 import UsersList from "@/components/UsersList.vue";
 import SearchBar from "@/components/SearchBar.vue";
-
+import PopUpFormUsers from "@/components/PopUpUsersForm.vue"
 const titlePage = "USERS VIEW"
 let users = reactive([]);
 let tickets = reactive([]);
 let clients = reactive([]);
 let searchTerm = ref("");
+let showModal = ref(false);
 
 onMounted(() => {
   getListado();
@@ -45,6 +52,9 @@ const itemListFiltered = computed(() => {
   }
   return users;
 });
+function addUser(){
+  showModal.value = true;
+}
 function setSearchTerm(search) {
   //console.log(search);
   searchTerm.value = search;
@@ -71,6 +81,12 @@ async function getListado() {
 </script>
 
 <style scoped>
+.botonera{
+  margin-top: 10px;
+  height: auto;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
 table {
 	width:100%;
 	border-spacing: 10px 25px;
