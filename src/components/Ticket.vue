@@ -1,37 +1,42 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  
-    <div class="incidencia" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Ticket Nº: {{ props.ticket.idTicket }}</h5>
+    <p class="card-text"></p>
+    <!-- <span v-for="technical in props.ticket.technical" :key="technical.idTicket">
+                    <span v-for="user in users" :key="user.idUser"> 
+                      <span class="" v-if="user.idUser == technical"><img class="css-shadow" :src="user.imgUser"/></span>
+                      
+                    </span> 
+                    
+              </span> -->
+              
+              <div class="incidencia" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         <div class="perfil">
+        
             <div class="technical">
             
               <span v-for="technical in props.ticket.technical" :key="technical.idTicket">
                     <div v-for="user in users" :key="user.idUser"> 
-                      <div class="item" v-if="user.idUser == technical"><img class="css-shadow" :src="user.imgUser"/><span v-if="user.idUser == technical"> {{ user.name }}</span> <!--{{ user.name }}--></div>
+                      <div class="item" v-if="user.idUser == technical">
+                        <router-link to="/UsersView" class="routerLink"><img class="css-shadow" :src="user.imgUser"/></router-link>
+                        <!-- <span v-if="user.idUser == technical"><br/> {{ user.name }}</span> -->
+                      </div>
                       
                     </div>  
               </span>
             </div>
         </div>
-        <div class="title">
-            <h5>{{ props.ticket.idTicket }}</h5>
-            <p class="description">{{ props.ticket.description }}</p>
-        </div> 
-        <div class="estado">
-            <div class="items-estado">
-                <p>Estado:<br/> {{ props.ticket.state }}</p>
-               
-                <p>fecha: {{ props.ticket.date }}</p>
-            </div>
+        
         </div>
- 
-    </div>
-    <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    {{ props.ticket.description }}
+        <br/>
+        <p class="card-text">{{ props.ticket.description }}</p>
+              <br/>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-  
 </div>
+      
  
 </template>
 
@@ -60,7 +65,7 @@ async function getListadoUsers() {
     users.push(doc.data());
   });
   
-  console.log(users)
+  //console.log(users)
   //console.log(tickets)
   //console.log(clients)
 }
@@ -71,16 +76,20 @@ async function getListadoUsers() {
 .incidencia {
     display: flex;
     width: 100%;
-    background-color: rgb(251, 212, 212);
+    background-color: rgb(230, 244, 255);
     margin-top: 10px;
     align-items:center;
+    border: 1px solid #0022ff;
+    border-radius: 15px;
 }
 
 .perfil {
     margin-left: 10px;
     width: 20%;
 }
-
+.card{
+  margin-top: 15px;
+}
 .title{
     margin-top: 0px;
     text-align: left;
@@ -110,8 +119,10 @@ async function getListadoUsers() {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #cddc39;
-  filter: drop-shadow(0 0 10px #ff5722);
+  border: 1px solid #cddc39;
+  filter: drop-shadow(0 0 5px #ff5722);
+  margin-left: 15px;
+  margin-top: -6px;
 }
 
 </style>

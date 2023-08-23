@@ -9,7 +9,7 @@
                             <span v-if="slide.state == true" class="green">On line</span>
                             <span v-else class="red">Disconnect</span>
                     </span>
-                    <br/> {{ slide.name }}
+                    <br/><h5>{{ slide.name }}</h5> 
                 </div>
                 <br/>
                <div>              
@@ -24,7 +24,7 @@
 <script setup>
 import { onMounted, defineProps  } from 'vue';
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide } from 'vue3-carousel'
+import { Carousel, Slide,  } from 'vue3-carousel'
 const props = defineProps({
     users: {
         type: Array,

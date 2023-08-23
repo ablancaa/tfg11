@@ -1,26 +1,17 @@
 <template>
     <p>Estados de Tickets</p>
-    
         <Carousel :autoplay="3000" :wrap-around="true">
-          
             <Slide v-for="slide in props.tickets" :key="slide">
-              
                 <div class="carousel__item item">
-                
                   <h6><strong>{{ slide.idTicket }}</strong></h6>
-                
-                      
-                  <span v-if="slide.state == 'procces'"><img src="../assets/proceso.png" width="50"/><br/><span class="yellow">Procces</span></span>
-                            <span v-else><span class="red">End</span></span>
+                  <span v-if="slide.state == 'procces'"><img src="../assets/proceso.png" width="45"/><br/><span class="yellow">Procces</span></span>
+                  <span v-else><img src="../assets/menu.png" width="45"/><br/><span class="red">End</span></span>
                 </div>
-                <br/>
-     
-               <div> 
-                       
-               </div>
+               
             </Slide>
           
     <template #addons>
+
     </template>
   </Carousel>
 
@@ -36,8 +27,7 @@ const props = defineProps({
     }
 })
 onMounted(() => {
-    //getSlide();
-
+    
   });
  
   

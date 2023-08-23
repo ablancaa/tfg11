@@ -12,7 +12,7 @@
 
 const props = defineProps({
     ticketsList: {
-        type: Array,
+      type: Array,
     },
     users: {
       type: Array,

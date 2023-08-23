@@ -3,7 +3,7 @@
         
         <div class="container">
             <SearchBar v-on:search="setSearchTerm" class=""/>
-            <UsersList :usersList="itemListFiltered"/> 
+            <UsersList :usersList="itemListFiltered" :ticketList="tickets"/> 
         </div>   
             
             
@@ -27,6 +27,7 @@ let searchTerm = ref("");
 onMounted(() => {
   getListado();
 });
+
 const itemListFiltered = computed(() => {
   if (!searchTerm.value) {
     return users;

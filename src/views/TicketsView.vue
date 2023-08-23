@@ -62,21 +62,6 @@ users.push(doc.data());
 </script>
 
 <style scoped>
-table {
-width:100%;
-border-spacing: 10px 25px;
-border:2px solid black;
-}
-td {
-border:2px solid black;
-}
 
-.active {
-background-color: aquamarine;
-}
-
-.disconnect{
-background-color: rgb(255, 183, 163);
-}
 
 </style>

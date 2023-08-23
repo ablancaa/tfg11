@@ -1,5 +1,4 @@
 <template>
-    
     <BarState :titlePage="titlePage"/>
         <div class="container">
             <SearchBar v-on:search="setSearchTerm" class="" />
@@ -42,7 +41,6 @@ const itemListFiltered = computed(() => {
   return clients;
 });
 function setSearchTerm(search) {
-  //console.log(search);
   searchTerm.value = search;
 }
 
@@ -61,50 +59,5 @@ clients.push(doc.data());
 </script>
 
 <style scoped>
-table {
-width:100%;
-border-spacing: 10px 25px;
-border:0px solid black;
-}
-td {
-border:0.5px solid black;
-}
 
-.active {
-background-color: aquamarine;
-}
-
-.disconnect{
-background-color: rgb(255, 183, 163);
-}
-.css-shadow {
-width: 50px;
-height: 50px;
-margin: 5px;
-border-radius: 50%;
-border: 2px solid #cddc39;
-filter: drop-shadow(0 0 10px #ff5722);
-}
-.flex-container {
-display: flex;
-width: 100%;
-background-color: #7553fb85;
-align-content: center;
-align-items: center;
-}
-
-.flex-item {
-
-background-color: #ddf1f8;
-width: 100%;
-height: 100%;
-margin: 5px;
-}
-.flex-item-1 {
-
-background-color: #ddf1f8;
-width: 50%;
-height: 100%;
-margin: 5px;
-}
 </style>

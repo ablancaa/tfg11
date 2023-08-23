@@ -5,17 +5,26 @@
 <div class="container">
   <div class="row fondo">
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/clientsView">
+      
         <div class="titulo ">
+          <router-link to="/clientsView" class="routerLink">
           <h1><img class="borderRadius" src="../assets/Client.svg" width="80"/> Clientes</h1>
+          </router-link>
           <div class="contenedorFlex">
-            <div class="item">Nº Clientes:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsNum }}</p></div>
-            <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsActive}}</p></div>
-            <div class="item">Disconnect:<br/><p class="sizeFontFlexBox">{{ contadores[2].clientsDisconnect }}</p></div>
+            <div class="item">
+              <router-link to="/clientsView" class="routerLink">Nº Clientes:</router-link><br/>
+              <router-link to="/clientsView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[2].clientsNum }}</p></router-link>
+            </div>
+            <div class="item">
+              <router-link to="/clientsView" class="routerLink">On Line:</router-link><br/>
+              <router-link to="/clientsView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[2].clientsActive}}</p></router-link></div>
+            <div class="item">
+              <router-link to="/clientsView" class="routerLink">Disconnect:</router-link><br/>
+              <router-link to="/clientsView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[2].clientsDisconnect }}</p></router-link></div>
             <div class="item"><SlideClients :clients="clients"/></div>
           </div>
         </div>
-      </router-link>
+      
       <!-- <div>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Nº Clients </router-link>{{ clients.length }}</span>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">On Line:</router-link> {{ numActive }}</span>
@@ -25,18 +34,30 @@
       
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/ticketsView">
+     
         <div class="titulo">
-          
+     
+      <router-link to="/ticketsView" class="routerLink">
           <h1><img class="borderRadius" src="../assets/Ticket.svg" width="80"/>Tickets</h1>
+      </router-link>
           <div class="contenedorFlex">
-            <div class="item">Nº Tickets:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsNum }}</p></div>
-            <div class="item">En proceso:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsProgress }}</p></div>
-            <div class="item">Resueltos:<br/><p class="sizeFontFlexBox">{{ contadores[1].ticketsEnd }}</p></div>
+            <div class="item">
+              <router-link to="/ticketsView" class="routerLink">Nº Tickets:</router-link><br/>
+              <router-link to="/ticketsView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[1].ticketsNum }}</p></router-link>
+            </div>
+            <div class="item">
+              <router-link to="/ticketsView" class="routerLink">En proceso:</router-link><br/>
+              <router-link to="/ticketsView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[1].ticketsProgress }}</p></router-link>
+            </div>
+            <div class="item">
+              <router-link to="/ticketsView" class="routerLink">Resueltos:</router-link><br/>
+              <router-link to="/ticketsView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[1].ticketsEnd }}</p></router-link>
+            </div>
             <div class="item"><SlideTickets :tickets="tickets"/></div>
           </div>
+        
         </div>
-      </router-link>
+      
       <!-- <div>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/ticketsView">Nº Tickets: </router-link>{{ tickets.length }}</span>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Estado:</router-link> {{ users.state }}</span>
@@ -46,10 +67,11 @@
     </div>
     
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
-      <router-link to="/usersView">
+      
         <div class="titulo">
-          
+          <router-link to="/usersView" class="routerLink">
           <h1><img class="borderRadius" src="../assets/Users.svg" width="80"/> Usuarios</h1>
+        </router-link>
           <div class="contenedorFlex">
             <div class="item">Nº Usuarios:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersNum }}</p></div>
             <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersActive }}</p></div>
@@ -57,7 +79,7 @@
             <div class="item"><SlideUsers :users="users"/></div>
           </div>
         </div>
-      </router-link>
+     
       <!-- <div>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Nº Usuarios: </router-link>{{ users.length }}</span>
         <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">On Line:</router-link> {{ users.state }}</span>
@@ -231,6 +253,9 @@ async function getListados() {
 }
 </script>
 <style scoped>
+.routerLink{
+     text-decoration: none;
+ }
 .borderRadius{
   border-radius: 5%;
 }

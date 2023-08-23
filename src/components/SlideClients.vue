@@ -9,7 +9,7 @@
                             <span v-if="slide.state == true"><span class="green">On Line</span></span>
                             <span v-else class="red">Disconnect</span>
                     </span>
-                    <br/> {{ slide.name }}
+                    <br/> <h5>{{ slide.name }}</h5>
                 </div>
                 <br/>
                <div>              

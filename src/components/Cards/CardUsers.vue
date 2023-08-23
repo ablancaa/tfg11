@@ -29,8 +29,14 @@
             <div class="flip-card-back">
                 
                 <p>{{ props.user.idUser }}</p> 
-                <h6>Tickets asociados</h6> 
-                <p>Tickets</p>
+                <h6 class="titulo">Tickets asociados al técnico</h6> 
+                <div v-for="ticket in props.ticket" :key="ticket">
+                <span v-for="tecnico in ticket.technical" :key="tecnico">
+                    <span v-if="tecnico == props.user.idUser">
+                        <img src="@/assets/Ticket.svg" width="35"/><router-link to="/TicketsView" class="routerLink">{{ ticket.idTicket }} | <span class="green" v-if="ticket.state =='procces'">{{ ticket.state }}</span><span class="red" v-if="ticket.state =='end'">{{ ticket.state }}</span></router-link>
+                    </span>
+                </span>
+                </div>
             </div>
         </div>
     </div>
@@ -39,13 +45,26 @@
 <script setup>
 import { defineProps } from 'vue';
  const props = defineProps({
+    ticket: {
+        type: Object,
+    },
     user: {
        type: Object,
     },
+    
    })
+   //console.log(props.ticket)
+   //console.log(props.user)
 </script>
 
 <style scoped>
+.titulo{
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+.routerLink {
+    text-decoration: none;
+}
 .profile-image img {
     border-radius: 50%;
     margin-bottom: 15px;
