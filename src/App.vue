@@ -1,5 +1,6 @@
 <template>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
   <NavBar/>
   <!-- <nav>
     <router-link to="/">Home</router-link> |
@@ -7,6 +8,7 @@
   </nav> -->
   <router-view/>
   <Footer/>
+  
 </template>
 <script setup>
 import NavBar from '@/components/NavBar.vue'

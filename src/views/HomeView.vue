@@ -75,14 +75,21 @@
     </div>
   </div>
   <hr/>
-
-  <table class="table table-responsive table-striped">
+  <p>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+    Resumen de tickets
+  </button>
+</p>
+<div style="max-height: 100%;">
+  <div class="collapse collapse-horizontal" id="collapseWidthExample">
+    <div class="card card-body" style="width: 100%;">
+      <table class="table table-responsive table-striped">
     <thead>
         <tr>
-            <th><h3>Nº Ticket</h3></th>
-            <th><h3>Cliente</h3></th>
-            <th><h3>Estado</h3></th>
-            <th><h3>Técnico</h3></th>
+            <th><h4>Nº Ticket</h4></th>
+            <th><h4>Cliente</h4></th>
+            <th><h4>Estado</h4></th>
+            <th><h4>Técnico</h4></th>
         </tr>
     </thead>
     <tbody>
@@ -108,12 +115,16 @@
         </tr>
     </tbody>
 </table>
+    </div>
+  </div>
+</div>
+  
 
   <hr/>
   
   <div class="row fondo">
     <div class="col-sm-12 col-md-12 col-lg-12"><ListToDo/></div>
-    <div class="col-sm-12 col-md-6 col-lg-12"><h2>Array contadores</h2>{{contadores}}</div>
+    <div class="col-sm-12 col-md-12 col-lg-12"><h2>Array contadores</h2>{{contadores}}</div>
   </div>
   
 </div>
