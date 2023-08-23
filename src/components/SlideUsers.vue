@@ -1,5 +1,5 @@
 <template>
-    <p>Estado de Usuarios</p>
+    <p><strong>Estado de Usuarios</strong></p>
         <Carousel :autoplay="3000" :wrap-around="true">
             <Slide v-for="slide in props.users" :key="slide">
                 <div class="carousel__item">

@@ -1,5 +1,5 @@
 <template>
-    <p>Estados de Tickets</p>
+    <p><strong>Estados de Tickets</strong></p>
         <Carousel :autoplay="3000" :wrap-around="true">
             <Slide v-for="slide in props.tickets" :key="slide">
                 <div class="carousel__item item">

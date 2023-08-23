@@ -73,9 +73,16 @@
           <h1><img class="borderRadius" src="../assets/Users.svg" width="80"/> Usuarios</h1>
         </router-link>
           <div class="contenedorFlex">
-            <div class="item">Nº Usuarios:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersNum }}</p></div>
-            <div class="item">On Line:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersActive }}</p></div>
-            <div class="item">Disconnect:<br/><p class="sizeFontFlexBox">{{ contadores[0].usersDisconnect }}</p></div>
+            <div class="item">
+              <router-link to="/usersView" class="routerLink">Nº Usuarios:</router-link><br/>
+              <router-link to="/usersView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[0].usersNum }}</p></router-link>
+            </div>
+            <div class="item">
+              <router-link to="/usersView" class="routerLink">On Line:</router-link><br/>
+              <router-link to="/usersView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[0].usersActive }}</p></router-link>
+            </div>
+            <div class="item"><router-link to="/usersView" class="routerLink">Disconnect:</router-link><br/>
+              <router-link to="/usersView" class="routerLink"><p class="sizeFontFlexBox">{{ contadores[0].usersDisconnect }}</p></router-link></div>
             <div class="item"><SlideUsers :users="users"/></div>
           </div>
         </div>
@@ -98,7 +105,7 @@
   </div> -->
   <hr/>
   <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
+  <!-- <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
        <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Estado de Usuarios</h1></span>
@@ -115,9 +122,9 @@
         
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="accordion-item">
+  <!-- <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Slides Css</h1></span>
@@ -161,7 +168,7 @@
   </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
   <hr/>
   
