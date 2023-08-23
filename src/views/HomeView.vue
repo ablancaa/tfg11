@@ -90,7 +90,7 @@
             <td class="texto-vertical-2"><h3>{{ticket.idTicket}}</h3></td>
             <td>
               <span v-for=" client in clients" :key="client.idClient">
-                <span v-if="ticket.idClient == client.idClient"><img :src="client.imgClient" width="45" class="css-shadow"/><br/>{{ client.name }} {{ client.surname1 }}<br/></span>
+                <router-link to="/clientsView" class="routerLink">  <span v-if="ticket.idClient == client.idClient"><img :src="client.imgClient" width="45" class="css-shadow"/><br/>{{ client.name }} {{ client.surname1 }}<br/></span></router-link>
               </span>
             </td>
             
@@ -101,7 +101,7 @@
             <td>
              <span v-for="tecnico in ticket.technical" :key="tecnico"><img :src="users.imgUser" width="45"/>
              <span v-for="user in users" :key="user.idUser">
-             <span v-if="tecnico == user.idUser"><img :src="user.imgUser" width="45" class="css-shadow"/><span class="margenName"><router-link to="/usersView" class="routerLink">{{ user.name }} {{ user.surname1 }}</router-link></span></span>
+             <span v-if="tecnico == user.idUser"><img :src="user.imgUser" width="45" class="css-shadow"/><span class="margenName"><router-link to="/usersView" class="routerLink">{{ user.name }}</router-link></span></span>
              </span>
              </span>
             </td>
@@ -112,8 +112,8 @@
   <hr/>
   
   <div class="row fondo">
-     <div class="col-sm-12 col-md-6 col-lg-6"><!--<h2>Array contadores</h2>{{contadores}} --></div>
-    <div class="col-sm-12 col-md-6 col-lg-6"><ListToDo/></div>
+     <div class="col-sm-12 col-md-6 col-lg-12"><!--<h2>Array contadores</h2>{{contadores}} --></div>
+    <div class="col-sm-12 col-md-12 col-lg-12"><ListToDo/></div>
   </div>
   
 </div>
@@ -207,6 +207,11 @@ async function getListados() {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     background-color: rgb(173, 241, 241);
+}
+.texto-vertical-3 {
+  width:20px;
+  word-wrap: break-word;
+  text-align:center;
 }
 .css-shadow {
   width: 50px;
