@@ -1,16 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  
   <div class="card">
   <div class="row">
-    <h3 class="card-title card-body">Ticket Nº: {{ props.ticket.idTicket }}</h3>
+    <h3 class="card-title card-body">Ticket Nº: {{ props.ticket.idTicket }} - Cliente: {{ props.ticket.idClient }}</h3>
     <div class="col-md-4">
       <h6 class=""><strong>Técnicos Asignados</strong></h6>
       <span v-for="technical in props.ticket.technical" :key="technical.idTicket">
               <span v-for="user in users" :key="user.idUser">
                 <span class="" v-if="user.idUser == technical">
-                  <router-link to="/UsersView" class="routerLink"><img class="img-fluid rounded-start css-shadow " :src="user.imgUser" /></router-link>
-                  <!-- <span v-if="user.idUser == technical"><br/> {{ user.name }}</span> -->
+                  <router-link to="/UsersView" class="routerLink"><img class="img-fluid rounded-start css-shadow " :src="user.imgUser" />{{ user.name }}</router-link>
                 </span>
               </span>
             </span>
@@ -20,39 +18,13 @@
         <p class="card-text">{{ props.ticket.description }}</p>
         <p class="card-text">
         <small class="text-muted">
-          <span class="green" v-if="ticket.state =='procces'"><img src="../assets/proceso.png" width="45"/>Procces</span>
-          <span class="red" v-if="ticket.state =='end'"><img src="../assets/menu.png" width="45"/><br/>End</span>
+          <span class="yellow" v-if="ticket.state =='procces'"><img src="../assets/proceso.png" width="45"/>Procces</span>
+          <span class="red" v-if="ticket.state =='end'"><img src="../assets/archivo.png" width="45"/><br/>End</span>
         </small></p>
       </div>
     </div>
   </div>
 </div>
-
-  <!-- <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Ticket Nº: {{ props.ticket.idTicket }}</h5>
-      <p class="card-text"></p>
-      <div class="incidencia" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-        aria-controls="collapseExample">
-        <div class="perfil">
-          <div class="technical">
-            <span v-for="technical in props.ticket.technical" :key="technical.idTicket">
-              <div v-for="user in users" :key="user.idUser">
-                <div class="item" v-if="user.idUser == technical">
-                  <router-link to="/UsersView" class="routerLink"><img class="css-shadow" :src="user.imgUser" /></router-link>
-                
-                </div>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
-      <br />
-      <p class="card-text">{{ props.ticket.description }}</p>
-      <br />
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->
 </template>
 
 <script setup>
@@ -95,28 +67,8 @@ async function getListadoUsers() {
   margin-top: 12px;
 }
 
-.title {
-  margin-top: 0px;
-  text-align: left;
-  width: 100%;
-}
-
-.estado {
-  width: 100%;
-  margin-top: 10px;
-}
-
-.technical {
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
-}
-
-.item {
-  flex-direction: column;
-}
-span.green {
-  background: #5EA226;
+span.yellow {
+  background: #a09a00c2;
   border-radius: 0.8em;
   -moz-border-radius: 0.8em;
   -webkit-border-radius: 0.8em;

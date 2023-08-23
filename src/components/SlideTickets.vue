@@ -5,7 +5,7 @@
                 <div class="carousel__item item">
                   <h6><strong>{{ slide.idTicket }}</strong></h6>
                   <span v-if="slide.state == 'procces'"><img src="../assets/proceso.png" width="45"/><br/><span class="yellow">Procces</span></span>
-                  <span v-else><img src="../assets/menu.png" width="45"/><br/><span class="red">End</span></span>
+                  <span v-else><img src="../assets/archivo.png" width="45"/><br/><span class="red">End</span></span>
                 </div>
                
             </Slide>

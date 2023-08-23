@@ -24,14 +24,6 @@
             <div class="item"><SlideClients :clients="clients"/></div>
           </div>
         </div>
-      
-      <!-- <div>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Nº Clients </router-link>{{ clients.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">On Line:</router-link> {{ numActive }}</span>
-        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Client.svg" width="50"/><router-link to="/clientsView">Disconnect</router-link></p> 
-      </div> -->
-     
-      
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
      
@@ -58,12 +50,6 @@
         
         </div>
       
-      <!-- <div>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/ticketsView">Nº Tickets: </router-link>{{ tickets.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Estado:</router-link> {{ users.state }}</span>
-        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Ticket.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
-      </div> -->
-      
     </div>
     
     <div class="col-sm-12 col-md-4 col-lg-4 fondoOpcion">
@@ -86,95 +72,48 @@
             <div class="item"><SlideUsers :users="users"/></div>
           </div>
         </div>
-     
-      <!-- <div>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Nº Usuarios: </router-link>{{ users.length }}</span>
-        <span class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">On Line:</router-link> {{ users.state }}</span>
-        <p class="itemUsuario usuario"><img class="borderRadius" src="../assets/Users.svg" width="50"/><router-link to="/usersView">Disconnect:</router-link></p> 
-      </div> -->
-      
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-    <div class="col-sm-6 col-md-4 col-lg-4"><CreditCard_4/><div class="titulo"></div></div>
-  </div> -->
   <hr/>
-  <div class="accordion" id="accordionExample">
-  <!-- <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-       <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Estado de Usuarios</h1></span>
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-      <div class="row">
-      <div class="col-4"><SlideClients :clients="clients"/></div>
-      <div class="col-4"><SlideUsers :users="users"/></div>
-      <div class="col-4"><SlideTickets :tickets="tickets"/></div>
-      </div>
-        <p></p>
-        
-      </div>
-    </div>
-  </div> -->
 
-  <!-- <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        <img src="../assets/people.svg" width="50"/> <span class="tituloBotonDesplegable"><h1>Slides Css</h1></span>
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <div class="row fondo">
-    <div class="col-sm-12 col-md-12 col-lg-6">
-      <div class="slider-container">  
-        <img
-        class="slider-item"
-        src="https://images.unsplash.com/photo-1580501170961-bb0dbf63a6df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
-        />
-        <img
-        class="slider-item"
-        src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        />
-        <img
-          class="slider-item"
-          src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        />
-      </div>  
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-6">
-      <div class="slider-container">  
-        <img
-        class="slider-item"
-        src="https://images.unsplash.com/photo-1580501170961-bb0dbf63a6df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
-        />
-        <img
-        class="slider-item"
-        src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        />
-        <img
-          class="slider-item"
-          src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        />
-      </div>  
-    </div>
-  </div>
-      </div>
-    </div>
-  </div> -->
-</div>
+  <table class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th><h3>Nº Ticket</h3></th>
+            <th><h3>Cliente</h3></th>
+            <th><h3>Estado</h3></th>
+            <th><h3>Técnico</h3></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="ticket in tickets" :key="ticket.idTicket">
+            <td class="texto-vertical-2"><h3>{{ticket.idTicket}}</h3></td>
+            <td>
+              <span v-for=" client in clients" :key="client.idClient">
+                <span v-if="ticket.idClient == client.idClient"><img :src="client.imgClient" width="45" class="css-shadow"/><br/>{{ client.name }} {{ client.surname1 }}<br/></span>
+              </span>
+            </td>
+            
+            <td>
+              <span class="yellow" v-if="ticket.state =='procces'">{{ticket.idTicket}}<img src="../assets/proceso.png" width="45"/>Procces</span>
+              <span class="red" v-if="ticket.state =='end'">{{ticket.idTicket}}<img src="../assets/archivo.png" width="45"/><br/>End</span>
+            </td>
+            <td>
+             <span v-for="tecnico in ticket.technical" :key="tecnico"><img :src="users.imgUser" width="45"/>
+             <span v-for="user in users" :key="user.idUser">
+             <span v-if="tecnico == user.idUser"><img :src="user.imgUser" width="45" class="css-shadow"/><span class="margenName"><router-link to="/usersView" class="routerLink">{{ user.name }} {{ user.surname1 }}</router-link></span></span>
+             </span>
+             </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
   <hr/>
   
   <div class="row fondo">
-    <div class="col-sm-12 col-md-6 col-lg-6"><h2>Array contadores</h2>{{contadores}}</div>
-    <div class="col-sm-12 col-md-12 col-lg-6"><ListToDo/></div>
+     <div class="col-sm-12 col-md-6 col-lg-6"><!--<h2>Array contadores</h2>{{contadores}} --></div>
+    <div class="col-sm-12 col-md-6 col-lg-6"><ListToDo/></div>
   </div>
   
 </div>
@@ -261,29 +200,34 @@ async function getListados() {
 }
 </script>
 <style scoped>
+.margenName{
+  margin-left: 10px;
+}
+.texto-vertical-2 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    background-color: rgb(173, 241, 241);
+}
+.css-shadow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #cddc39;
+  filter: drop-shadow(0 0 5px #ff5722);
+  margin-left: 15px;
+  margin-top: 6px;
+}
 .routerLink{
      text-decoration: none;
  }
 .borderRadius{
   border-radius: 5%;
 }
-/* .borderRadius:hover{
- border-radius: 15%;
--webkit-box-shadow: 2px 10px 5px 0px rgba(121, 244, 236, 0.787);
--moz-box-shadow: 2px 10px 5px 0px rgba(132, 250, 238, 0.44);
-box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
-} */
-.img {
-  width: 50%;
-  height: 50%;
-}
+
 .fondo {
   background-color:rgba(254, 254, 254, 0.633);
   padding: 5px;
   margin-bottom: 10px;
-}
-.tituloBotonDesplegable{
-  margin-left: 6%;
 }
 .fondoOpcion{
   border-radius: 10px;
@@ -318,9 +262,6 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   order: 0;
   padding: 5px;
 }
-.item-slide{
-  align-items: center;
-}
 .sizeFontFlexBox {
   font-size: 2rem;
   background-color: rgb(149, 189, 248);
@@ -329,21 +270,33 @@ box-shadow: 2px 10px 5px 0px rgba(92, 222, 251, 0.44);
   color: rgb(255, 255, 255);
 }
 
-/* carrusel */
 
 
-.slider-container {
-  display: flex;
-  width: 100%;
-  height: 50vh;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+span.yellow {
+  background: #a09a00c2;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  width: 6.1em;
+  margin-top: 5px;
+}
+span.red {
+  background: #a22c26;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  width: 6.1em;
+  margin-top: 5px; 
 }
 
-.slider-container img {
-  flex: 0 0 100%;
-  width: 50%;
-  object-fit: cover;
-  scroll-snap-align: center;
-}
 </style>
