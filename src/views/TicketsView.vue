@@ -29,7 +29,7 @@ let searchTerm = ref("");
     return tickets.filter((item) => {
       return (
         item.idTicket.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-        item.state.toLowerCase().includes(searchTerm.value.toLowerCase()) 
+        item.state.toLowerCase().includes(searchTerm.value.toLowerCase())
       );
     });
   }
