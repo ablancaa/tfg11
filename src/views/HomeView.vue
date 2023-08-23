@@ -174,7 +174,7 @@
   
   <div class="row fondo">
     <div class="col-sm-12 col-md-6 col-lg-6"><h2>Array contadores</h2>{{contadores}}</div>
-    <div class="col-sm-12 col-md-6 col-lg-6"></div>
+    <div class="col-sm-12 col-md-12 col-lg-6"><ListToDo/></div>
   </div>
   
 </div>
@@ -186,6 +186,7 @@ import BarState from '@/components/BarState.vue'
 import SlideClients from '@/components/SlideClients.vue'
 import SlideUsers from '@/components/SlideUsers.vue'
 import SlideTickets from '@/components/SlideTickets.vue'
+import ListToDo from '@/components/ListToDo.vue'
 //import CreditCard_4 from '@/components/CreditCards/CreditCard_4.vue'
 import { reactive, onMounted } from "vue";
 import { db } from "../utils/FirebaseConfig.js"
