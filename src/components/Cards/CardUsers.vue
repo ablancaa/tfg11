@@ -33,13 +33,15 @@
                 <div v-for="ticket in props.ticket" :key="ticket">
                 <span v-for="tecnico in ticket.technical" :key="tecnico">
                     <span v-if="tecnico == props.user.idUser">
-                        <img src="@/assets/Ticket.svg" width="35"/><router-link to="/TicketsView" class="routerLink">{{ ticket.idTicket }} | <span class="green" v-if="ticket.state =='procces'">{{ ticket.state }}</span><span class="red" v-if="ticket.state =='end'">{{ ticket.state }}</span></router-link>
+                        <img src="@/assets/Ticket.svg" width="35"/>
+                        <router-link to="/TicketsView" class="routerLink">{{ ticket.idTicket }} | <span class="green" v-if="ticket.state =='procces'">{{ ticket.state }}</span><span class="red" v-if="ticket.state =='end'">{{ ticket.state }}</span></router-link>
                     </span>
                 </span>
                 </div>
             </div>
         </div>
     </div>
+    
 </template>
 
 <script setup>

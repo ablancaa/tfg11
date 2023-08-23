@@ -32,23 +32,21 @@
                             
                             
                             <div>
-                                <button class="btn btn-primary btn-round">Detalle</button>
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary btn-round" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Detalle
+                                </button>
+                                <!-- <button class="btn btn-primary btn-round">Detalle</button> -->
                                 <button class="btn btn-primary btn-round buttonMargen">Message</button>
                             </div>
                             <p class="social-icon m-t-5 m-b-0">
                   
-                                <!-- <a title="Twitter" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                <a title="Facebook" href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
-                                <a title="Google-plus" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
-                                <a title="Behance" href="javascript:void(0);"><i class="fa fa-behance"></i></a>
-                                <a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram "></i></a> -->
                             </p>
                         </div>                
                     </div>
                     <span class="fa fa-phone">
                     <span class="email"> 
                                 <select>
-                                
                                 <option v-for="phone in client.phones" :key="phone">{{ phone }}</option>
                                 </select>
                             </span>
@@ -59,7 +57,26 @@
             </div>
         </div>
     </div>
-</div>                          
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="profile-image float-md-right"> <img :src="props.client.imgClient" alt=""> </div>
+        <div class="profile-image float-md-right"> {{props.client.name}}  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>                     
 </template>
 
 <script setup>
@@ -74,7 +91,8 @@ const props = defineProps({
 <style scoped>
 body{
     margin-top:20px;
-    background:#eee;    
+    background:#eee;
+      
 }
 a {
     color: #000000;
@@ -95,6 +113,7 @@ a {
     display: inline-block;
     position: relative;
     width: 100%;
+    
     box-shadow: none;
 }
 .card .body {
@@ -102,6 +121,7 @@ a {
     color: #424242;
     padding: 5px;
     font-weight: 400;
+    
     border: solid 0.1px;
     border-radius: 1rem;
     box-shadow: 0 3px 6px rgba(0, 21, 255, 0.345), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -118,24 +138,28 @@ a {
 .profile-page .profile-header {
     position: relative;
     
+    
 }
 
 .profile-page .profile-header .profile-image img {
     border-radius: 50%;
     margin-bottom: 15px;
     width: 140px;
+    
     border: 3px solid #fff;
     margin: 5px 5px 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  
+
 }
 
 .profile-page .profile-header .social-icon a {
-    margin: 0 5px
+    margin: 0 5px;
 }
 
 .profile-page .profile-sub-header {
     min-height: 60px;
-    width: 100%
+    width: 100%;
 }
 
 .profile-page .profile-sub-header ul.box-list {
@@ -148,17 +172,18 @@ a {
 .profile-page .profile-sub-header ul.box-list li {
     border-right: 1px solid #e0e0e0;
     display: table-cell;
-    list-style: none
+    list-style: none;
 }
 
 .profile-page .profile-sub-header ul.box-list li:last-child {
-    border-right: none
+    border-right: none;
+    
 }
 
 .profile-page .profile-sub-header ul.box-list li a {
     display: block;
     padding: 15px 0;
-    color: #424242
+    color: #424242;
 }
 
 .state{
