@@ -112,8 +112,8 @@
   <hr/>
   
   <div class="row fondo">
-     <div class="col-sm-12 col-md-6 col-lg-12"><!--<h2>Array contadores</h2>{{contadores}} --></div>
     <div class="col-sm-12 col-md-12 col-lg-12"><ListToDo/></div>
+    <div class="col-sm-12 col-md-6 col-lg-12"><h2>Array contadores</h2>{{contadores}}</div>
   </div>
   
 </div>
