@@ -6,6 +6,7 @@
             <div class="card profile-header">
                 <div class="body">
                     <div class="row">
+                        <p>{{ props.client.idClient }}</p> 
                         <div class="col-xs-12 col-md-6 col-lg">
                             <div class="profile-image float-md-right"> <img :src="props.client.imgClient" alt=""> 
                                 <p class="social-icon m-t-5 m-b-0">
@@ -53,39 +54,36 @@
                             </span><br/>
                     <span class="fa fa-envelope-open"></span>
                     <span class="email"><span>{{ props.client.email }}</span></span>
+                    <div class="actions">
+                    <hr/>
+                        <button @click="deleteClient(props.client.idClient)">
+                        <img src="../../assets/basura.png" width="20" />
+                    </button>
+             
+                   
+                    </div>
                 </div>                    
             </div>
         </div>
     </div>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="profile-image float-md-right"> <img :src="props.client.imgClient" alt=""> </div>
-        <div class="profile-image float-md-right"> {{props.client.name}}  </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>                     
+                     
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+
+import { defineProps, defineEmits } from 'vue';
 const props = defineProps({
   client: {
       type: Object,
     }
 })
+const emit = defineEmits(['deleteClient'])
+
+const deleteClient = () =>{
+    emit('deleteClient', props.client.idClient)
+    console.log("delete",props.client.idClient)
+}
 </script>
 
 <style scoped>
