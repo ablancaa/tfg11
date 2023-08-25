@@ -45,15 +45,18 @@
                             </p>
                         </div>                
                     </div>
+                   <div class="datos">
                     <span class="fa fa-phone">
                     <span class="email"> 
-                                <select>
+                                <!-- <select>
                                 <option v-for="phone in client.phones" :key="phone">{{ phone }}</option>
-                                </select>
+                                </select> -->
                             </span>
+                            <span>{{ client.phones.mobile }} | <span class="fa fa-phone">{{ client.phones.landline }}</span> </span>
                             </span><br/>
                     <span class="fa fa-envelope-open"></span>
                     <span class="email"><span>{{ props.client.email }}</span></span>
+                   </div>
                     <div class="actions">
                     <hr/>
                         <button @click="deleteClient(props.client.idClient)">
@@ -72,21 +75,31 @@
 
 <script setup>
 
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits, ref  } from 'vue';
+//import { doc,getDoc } from "firebase/firestore";
+//import { db } from "../../utils/FirebaseConfig.js"
+
+let idClient= ref();
+
 const props = defineProps({
   client: {
       type: Object,
     }
 })
-const emit = defineEmits(['deleteClient'])
+const emit = defineEmits(['deleteClientId'])
 
 const deleteClient = () =>{
-    emit('deleteClient', props.client.idClient)
-    console.log("delete",props.client.idClient)
+    idClient.value = props.client.idClient;
+    emit('deleteClientId', idClient.value);
+    //console.log("Delete Card: "+idClient.value);
 }
 </script>
 
 <style scoped>
+.datos{
+    text-align: left;
+    margin-left: 15px;
+}
 body{
     margin-top:20px;
     background:#eee;

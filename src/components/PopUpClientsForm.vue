@@ -31,7 +31,7 @@
                     <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
                     <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                 </div> -->
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" @click="newUser">Save Profile</button> <button @click="emit('close')" class="btn btn-primary profile-button">Cerrar</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" @click="newClient">Save Profile</button> <button @click="emit('close')" class="btn btn-primary profile-button">Cerrar</button></div>
             </div>
         </div>
         <!-- <div class="col-md-4">
@@ -49,7 +49,7 @@
 
 import{ ref, reactive, defineEmits } from 'vue'
 import { uuid } from 'vue-uuid';
-const emit = defineEmits(['newUser','close'])
+const emit = defineEmits(['newClient','close'])
 let id = ref(uuid.v1());
 let avatar = ref("https://i.pravatar.cc/80");
 let name = ref("");
@@ -61,9 +61,9 @@ let adress = ref("");
 let email = ref("");
 let idClient = ref("");
 
-const newUser = () => {
+const newClient = () => {
     let newUser = reactive({
-        idClient: idClient.value,
+        idClient: id.value,
         name: name.value,
         avatar: avatar.value,
         surname1: surname1.value,
@@ -77,8 +77,8 @@ const newUser = () => {
         },
        
     });
-    emit('newUser', newUser);
-    console.log(newUser);
+    emit('newClient', newUser);
+    //console.log(newUser);
 }
 
 </script>
