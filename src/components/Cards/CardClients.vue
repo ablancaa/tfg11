@@ -6,7 +6,6 @@
             <div class="card profile-header">
                 <div class="body">
                     <div class="row">
-                        <p>{{ props.client.idClient }}</p> 
                         <div class="col-xs-12 col-md-6 col-lg">
                             <div class="profile-image float-md-right"> <img :src="props.client.imgClient" alt=""> 
                                 <p class="social-icon m-t-5 m-b-0">
@@ -32,27 +31,23 @@
                             <p>{{props.client.adress}}</p>
                             
                             
-                            <div>
-                            <!-- Button trigger modal -->
+                            <!-- <div>
+                          
                                 <button type="button" class="btn btn-primary btn-round" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Detalle
                                 </button>
-                                <!-- <button class="btn btn-primary btn-round">Detalle</button> -->
+                              
                                 <button class="btn btn-primary btn-round buttonMargen">Message</button>
-                            </div>
+                            </div> -->
+                            <p><strong>IdClient:</strong> {{ props.client.idClient }}</p>
                             <p class="social-icon m-t-5 m-b-0">
                   
                             </p>
                         </div>                
                     </div>
-                   <div class="datos">
-                    <span class="fa fa-phone">
-                    <span class="email"> 
-                                <!-- <select>
-                                <option v-for="phone in client.phones" :key="phone">{{ phone }}</option>
-                                </select> -->
-                            </span>
-                            <span>{{ client.phones.mobile }} | <span class="fa fa-phone">{{ client.phones.landline }}</span> </span>
+                   <div class="datos ">
+                    <span class="fa fa-phone ">
+                            <span class="email">{{ client.phones.mobile }}<br><span class="fa fa-phone" v-show="client.phones.landline"> <span class="email">{{ client.phones.landline }}</span></span> </span>
                             </span><br/>
                     <span class="fa fa-envelope-open"></span>
                     <span class="email"><span>{{ props.client.email }}</span></span>
@@ -60,12 +55,15 @@
                     <div class="actions">
                     <hr/>
                         <button @click="deleteClient(props.client.idClient)">
-                        <img src="../../assets/basura.png" width="20" />
-                    </button>
+                            <img src="../../assets/basura.png" width="20" />
+                        </button>
              
                    
                     </div>
-                </div>                    
+              
+                    <!-- <p><strong>IdClient:</strong> {{ props.client.idClient }}</p>  -->
+                </div>   
+                                 
             </div>
         </div>
     </div>
@@ -143,7 +141,6 @@ a {
     padding: 4px;
     font-weight: 400;
     border-radius: 1rem;
-    margin-top: -5px;
     width: 100%;
 }
 .profile-page .profile-header {
@@ -177,7 +174,7 @@ a {
     display: inline-table;
     table-layout: fixed;
     width: 100%;
-    background: #eee
+    background: #eee;
 }
 
 .profile-page .profile-sub-header ul.box-list li {

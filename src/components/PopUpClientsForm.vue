@@ -4,7 +4,7 @@
         <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" :src="avatar"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">{{email}}</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" :src="avatar"><span class="font-weight-bold">{{ name }}</span><span class="text-black-50">{{email}}</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -12,11 +12,13 @@
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
                 <div class="row mt-2">
+                    <div class="col-md-12"><label class="labels">idClient</label><input type="text" class="form-control" :placeholder="id" v-model="idClient" disabled></div>
                     <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" v-model="name"></div>
                     <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" placeholder="surname1" v-model="surname1"></div>
                     <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" placeholder="surname2" v-model="surname2"></div>
                 </div>
                 <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Avatar</label><input type="text" class="form-control" placeholder="enter Mobile phone number" v-model="avatar"></div>
                     <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter Mobile phone number" v-model="mobile"></div>
                     <div class="col-md-12"><label class="labels">Lanline Number</label><input type="text" class="form-control" placeholder="enter Landline phone number" v-model="landline"></div>
                     <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" v-model="adress"></div>
@@ -25,7 +27,7 @@
                     <!-- <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="State" value=""></div> -->
                     <!-- <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email" v-model="email"></div>
-                    <div class="col-md-12"><label class="labels">idClient</label><input type="text" class="form-control" :placeholder="id" v-model="idClient">{{ id }}</div>
+                    <!-- <div class="col-md-12"><label class="labels">idClient</label><input type="text" class="form-control" :placeholder="id" v-model="idClient" disabled></div> -->
                 </div>
                 <!-- <div class="row mt-3">
                     <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
@@ -49,9 +51,11 @@
 
 import{ ref, reactive, defineEmits } from 'vue'
 import { uuid } from 'vue-uuid';
+
 const emit = defineEmits(['newClient','close'])
+
 let id = ref(uuid.v1());
-let avatar = ref("https://i.pravatar.cc/80");
+let avatar = ref('https://i.pravatar.cc/80');
 let name = ref("");
 let surname1 = ref("");
 let surname2 = ref("");
@@ -60,23 +64,28 @@ let landline = ref("");
 let adress = ref("");
 let email = ref("");
 let idClient = ref("");
+let newUser = reactive({})
 
 const newClient = () => {
-    let newUser = reactive({
-        idClient: id.value,
-        name: name.value,
-        avatar: avatar.value,
-        surname1: surname1.value,
-        surname2: surname2.value,
-        state: false,
-        adress: adress.value,
-        email: email.value,
-        phones: {
-            mobile: mobile.value,
-            landline: landline.value,
-        },
-       
-    });
+    if(name.value == ''){
+        alert("Nombre no introducido");
+    } else {
+         newUser = ({
+            idClient: id.value,
+            name: name.value,
+            avatar: avatar.value,
+            surname1: surname1.value,
+            surname2: surname2.value,
+            state: false,
+            adress: adress.value,
+            email: email.value,
+            phones: {
+                mobile: mobile.value,
+                landline: landline.value,
+            },
+   
+        });
+    }
     emit('newClient', newUser);
     //console.log(newUser);
 }
@@ -85,7 +94,7 @@ const newClient = () => {
 <style scoped>
 #modal {
   background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  color: #000000;
   position: fixed;
   top: 0;
   left: 0;
